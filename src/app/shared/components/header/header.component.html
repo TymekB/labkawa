@@ -1,0 +1,52 @@
+<header class="hdr">
+  <!-- top bar -->
+  <div class="hdr__top">
+    <div class="container hdr__top-inner">
+      <span class="hdr__top-item">📞 Kontakt: <a href="tel:+48158362888">+48 15 836 28 88</a></span>
+      <div class="hdr__top-right">
+        <a href="#" class="hdr__top-item">Dla firm</a>
+        <a href="#" class="hdr__top-item">Pomoc</a>
+        <a routerLink="/wyniki-online" class="hdr__top-item hdr__top-item--accent">🔒 Wyniki online</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- main bar -->
+  <div class="hdr__main">
+    <div class="container hdr__main-inner">
+      <app-logo />
+
+      <form class="hdr__search" (ngSubmit)="search()" role="search">
+        <span class="hdr__search-icon" aria-hidden="true">🔍</span>
+        <input
+          class="hdr__search-input"
+          type="search"
+          name="q"
+          [ngModel]="query()"
+          (ngModelChange)="query.set($event)"
+          placeholder="Szukaj badania, np. Lamblia, owsik, kalprotektyna…"
+          aria-label="Szukaj badania" />
+        <button class="btn btn--primary hdr__search-btn" type="submit">Szukaj</button>
+      </form>
+
+      <div class="hdr__actions">
+        <a routerLink="/wyniki-online" class="btn btn--primary hdr__results-btn">🔒 Wyniki online</a>
+        <button class="hdr__burger" type="button" (click)="toggleMobile()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- nav -->
+  <nav class="hdr__nav" [class.is-open]="mobileOpen()">
+    <div class="container hdr__nav-inner">
+      @for (item of nav; track item.link) {
+        <a [routerLink]="item.link" routerLinkActive="active" (click)="closeMobile()">{{ item.label }}</a>
+      }
+      <a routerLink="/wyniki-online" class="hdr__nav-cta" routerLinkActive="active" (click)="closeMobile()">
+        Wyniki online
+      </a>
+    </div>
+  </nav>
+</header>

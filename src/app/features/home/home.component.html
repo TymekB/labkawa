@@ -1,0 +1,173 @@
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="eyebrow">Niepubliczny Zakład Opieki Zdrowotnej</span>
+      <h1>Badania laboratoryjne <span>bez skierowania</span> i bez kolejek</h1>
+      <p class="hero__lead">
+        Wybierz badania z naszego katalogu, pobierz próbkę w jednym z punktów pobrań i odbierz
+        wyniki online. Profilaktyka zdrowia jeszcze nigdy nie była tak prosta.
+      </p>
+
+      <form class="hero__search" (ngSubmit)="search()" role="search">
+        <span class="hero__search-icon" aria-hidden="true">🔍</span>
+        <input
+          class="hero__search-input"
+          type="search"
+          name="q"
+          [ngModel]="query()"
+          (ngModelChange)="query.set($event)"
+          placeholder="Wpisz nazwę badania, np. Lamblia, kalprotektyna…"
+          aria-label="Szukaj badania" />
+        <button class="btn btn--primary" type="submit">Znajdź badanie</button>
+      </form>
+
+      <div class="hero__quick">
+        <span>Popularne:</span>
+        <a routerLink="/badania" [queryParams]="{ q: 'Lamblia' }">Lamblia</a>
+        <a routerLink="/badania" [queryParams]="{ q: 'kalprotektyna' }">Kalprotektyna</a>
+        <a routerLink="/badania" [queryParams]="{ q: 'Helicobacter' }">Helicobacter</a>
+        <a routerLink="/pakiety">Pakiety →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust">
+  <div class="container trust__inner">
+    <div class="trust__item"><b>✓</b> Bez skierowania</div>
+    <div class="trust__item"><b>✓</b> Wyniki online</div>
+    <div class="trust__item"><b>✓</b> Akredytowane laboratorium</div>
+    <div class="trust__item"><b>✓</b> Pobranie w domu</div>
+  </div>
+</section>
+
+<!-- INTRO / O LABORATORIUM -->
+<section class="section intro">
+  <div class="container intro__inner">
+    <span class="intro__icon" aria-hidden="true">
+      <svg viewBox="0 0 48 48" width="52" height="52">
+        <path d="M24 6 6 19v3h4v18h28V22h4v-3L24 6z" fill="var(--brand)" />
+        <path d="M22 26h4v4h4v4h-4v4h-4v-4h-4v-4h4z" fill="#fff" />
+      </svg>
+    </span>
+    <h2 class="intro__title">NZOZ Laboratorium Diagnostyczne „LAB”</h2>
+    <p class="intro__text">
+      Nasze laboratorium to nowoczesna placówka medyczna, której nadrzędnym celem jest
+      zapewnienie pacjentom rzetelnych wyników badań, wspierając ich zdrowie z pełnym
+      zaangażowaniem. Pod kierownictwem <strong>Marii Kawy</strong>, cenionej specjalistki
+      z wieloletnim doświadczeniem, oferujemy szeroką gamę usług diagnostycznych, opartych
+      na najnowocześniejszych technologiach. Dzięki innowacyjnemu sprzętowi oraz dbałości
+      o najwyższe standardy, gwarantujemy szybkie i trafne diagnozy, które pomagają pacjentom
+      na każdym etapie leczenia, zapewniając im spokój i wsparcie w drodze do zdrowia.
+    </p>
+  </div>
+</section>
+
+<!-- ZAKRES BADAŃ -->
+<section class="section section--alt scopes">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nasza diagnostyka</span>
+      <h2>Oferujemy szeroki zakres badań diagnostycznych</h2>
+      <p>Pięć obszarów diagnostyki laboratoryjnej — od analityki po endokrynologię.</p>
+    </div>
+    <div class="scopes__grid">
+      @for (scope of scopes; track scope.label; let i = $index) {
+        <article class="card scope" [class.scope--wide]="i === 0">
+          <div class="scope__top">
+            <span class="scope__icon" aria-hidden="true">{{ scope.icon }}</span>
+            <h3 class="scope__label">{{ scope.label }}</h3>
+          </div>
+          <p class="scope__text">{{ scope.text }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR TESTS -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Najczęściej wybierane</span>
+      <h2>Popularne badania</h2>
+    </div>
+    <div class="grid grid--4">
+      @for (test of popular(); track test.id) {
+        <app-test-card [test]="test" />
+      }
+    </div>
+    <div class="text-center" style="margin-top: 36px;">
+      <a routerLink="/badania" class="btn btn--ghost">Zobacz wszystkie badania</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">To proste</span>
+      <h2>Jak to działa?</h2>
+    </div>
+    <div class="steps">
+      @for (step of steps; track step.num) {
+        <div class="step">
+          <div class="step__badge">{{ step.icon }}</div>
+          <div class="step__num">Krok {{ step.num }}</div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Oszczędzaj w pakiecie</span>
+      <h2>Polecane pakiety badań</h2>
+      <p>Gotowe zestawy badań dobrane przez naszych diagnostów — taniej niż osobno.</p>
+    </div>
+    <div class="grid grid--3">
+      @for (pkg of topPackages; track pkg.id) {
+        <app-package-card [pkg]="pkg" />
+      }
+    </div>
+    <div class="text-center" style="margin-top: 36px;">
+      <a routerLink="/pakiety" class="btn btn--ghost">Wszystkie pakiety</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container stats__inner">
+    @for (s of stats; track s.label) {
+      <div class="stat">
+        <div class="stat__value">{{ s.value }}</div>
+        <div class="stat__label">{{ s.label }}</div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <div class="cta__text">
+        <h2>Masz pytania? Pomożemy Ci dobrać badania</h2>
+        <p>Nasi konsultanci pomogą wybrać odpowiedni pakiet i odpowiedzą na pytania dotyczące przygotowania.</p>
+      </div>
+      <div class="cta__actions">
+        <a routerLink="/kontakt" class="btn btn--white">Skontaktuj się</a>
+        <a routerLink="/punkty-pobran" class="btn btn--ghost btn--ghost-light">Znajdź punkt pobrań</a>
+      </div>
+    </div>
+  </div>
+</section>

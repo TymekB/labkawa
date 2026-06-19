@@ -1,0 +1,86 @@
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs"><a routerLink="/">Strona główna</a> <span>/</span> Kontakt</nav>
+    <h1>Kontakt</h1>
+    <p>Masz pytanie dotyczące badań lub wyników? Skontaktuj się z nami — chętnie pomożemy.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact">
+    <div class="contact__info">
+      <div class="card contact__card">
+        <h3>📞 Telefon</h3>
+        <p><a href="tel:+48158362888">+48 15 836 28 88</a></p>
+        <p><a href="tel:+48604427483">+48 604 427 483</a></p>
+        <span class="text-muted">Odbiór przesyłek 8:00–14:00</span>
+      </div>
+      <div class="card contact__card">
+        <h3>✉️ Mail</h3>
+        <p><a href="mailto:labkawa@vp.pl">labkawa&#64;vp.pl</a></p>
+        <span class="text-muted">Zamówienie zestawu i kontakt</span>
+      </div>
+      <div class="card contact__card">
+        <h3>📍 Adres</h3>
+        <p>NZOZ Laboratorium Diagnostyczne „LAB”</p>
+        <p>ul. Piłsudskiego 17<br />39-432 Gorzyce</p>
+      </div>
+    </div>
+
+    <div class="card contact__form">
+      @if (sent()) {
+        <div class="contact__thanks">
+          <span class="contact__thanks-icon">✅</span>
+          <h2>Wiadomość wysłana!</h2>
+          <p>Dziękujemy za kontakt. Odpowiemy najszybciej, jak to możliwe.</p>
+          <button type="button" class="btn btn--ghost" (click)="sent.set(false)">Wyślij kolejną</button>
+        </div>
+      } @else {
+        <h2>Napisz do nas</h2>
+        <form #form="ngForm" (ngSubmit)="submit(form)" novalidate>
+          <div class="form-row">
+            <label for="name">Imię i nazwisko</label>
+            <input id="name" name="name" class="field" required minlength="3"
+                   [(ngModel)]="model.name" #name="ngModel" />
+            @if (name.invalid && name.touched) {
+              <small class="err">Podaj imię i nazwisko (min. 3 znaki).</small>
+            }
+          </div>
+
+          <div class="form-row">
+            <label for="email">Adres e-mail</label>
+            <input id="email" name="email" type="email" class="field" required email
+                   [(ngModel)]="model.email" #email="ngModel" />
+            @if (email.invalid && email.touched) {
+              <small class="err">Podaj poprawny adres e-mail.</small>
+            }
+          </div>
+
+          <div class="form-row">
+            <label for="message">Wiadomość</label>
+            <textarea id="message" name="message" class="field" rows="5" required minlength="10"
+                      [(ngModel)]="model.message" #message="ngModel"></textarea>
+            @if (message.invalid && message.touched) {
+              <small class="err">Wiadomość musi mieć min. 10 znaków.</small>
+            }
+          </div>
+
+          <button type="submit" class="btn btn--primary">Wyślij wiadomość</button>
+        </form>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="card contact__map">
+      <iframe
+        title="Lokalizacja laboratorium — ul. Piłsudskiego 17, 39-432 Gorzyce"
+        src="https://www.google.com/maps?q=NZOZ%20Laboratorium%20Diagnostyczne%20LAB%2C%20Pi%C5%82sudskiego%2017%2C%2039-432%20Gorzyce&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</section>

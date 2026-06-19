@@ -1,0 +1,36 @@
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+interface Faq { q: string; a: string; }
+interface Tip { icon: string; title: string; text: string; }
+
+@Component({
+  selector: 'app-patient',
+  standalone: true,
+  imports: [RouterLink],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './patient.component.html',
+  styleUrl: './patient.component.scss',
+})
+export class PatientComponent {
+  readonly openFaq = signal<number | null>(0);
+
+  readonly tips: Tip[] = [
+    { icon: '🌙', title: 'Bądź na czczo', text: 'Do większości badań krwi przyjdź rano, po 8–12 godzinach bez jedzenia. Możesz pić wodę.' },
+    { icon: '💧', title: 'Nawodnij się', text: 'Wypij szklankę wody przed pobraniem — ułatwia to pobranie krwi.' },
+    { icon: '🏃', title: 'Unikaj wysiłku', text: 'Dzień przed badaniem zrezygnuj z intensywnego wysiłku fizycznego i alkoholu.' },
+    { icon: '💊', title: 'Leki', text: 'Poinformuj personel o przyjmowanych lekach. Leki na tarczycę przyjmij po pobraniu.' },
+  ];
+
+  readonly faqs: Faq[] = [
+    { q: 'Czy potrzebuję skierowania?', a: 'Nie. Wszystkie badania z naszego katalogu możesz wykonać prywatnie, bez skierowania od lekarza.' },
+    { q: 'Jak szybko otrzymam wyniki?', a: 'Większość wyników jest dostępna online już następnego dnia roboczego. Czas oczekiwania jest podany przy każdym badaniu.' },
+    { q: 'Jak odbieram wyniki?', a: 'Wyniki udostępniamy w panelu „Wyniki online”. Logujesz się numerem zlecenia i kodem z potwierdzenia pobrania.' },
+    { q: 'Czy mogę zamówić pobranie w domu?', a: 'Tak. W wybranych punktach oferujemy mobilne pobranie w domu pacjenta. Sprawdź dostępność na stronie punktów pobrań.' },
+    { q: 'Jak zapłacić za badania?', a: 'Płatność realizujesz bezpośrednio w punkcie pobrań — gotówką lub kartą. Sprzedaż online nie jest dostępna.' },
+  ];
+
+  toggle(i: number): void {
+    this.openFaq.update((cur) => (cur === i ? null : i));
+  }
+}

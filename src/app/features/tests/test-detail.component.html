@@ -1,0 +1,87 @@
+@if (test(); as t) {
+  <section class="page-hero">
+    <div class="container">
+      <nav class="crumbs">
+        <a routerLink="/">Strona główna</a> <span>/</span>
+        <a routerLink="/badania">Badania</a> <span>/</span> {{ t.name }}
+      </nav>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container detail">
+      <div class="detail__main">
+        <div class="detail__head">
+          <span class="badge">{{ t.code }}</span>
+          @if (category()) {
+            <a class="badge" style="margin-left:8px" routerLink="/badania" [queryParams]="{ kategoria: category()!.slug }">
+              {{ category()!.name }}
+            </a>
+          }
+          <h1>{{ t.name }}</h1>
+          <p class="detail__lead">{{ t.description }}</p>
+        </div>
+
+        <div class="detail__block">
+          <h3>📋 Informacje o badaniu</h3>
+          <ul class="specs">
+            <li><b>Materiał</b><span>{{ t.material }}</span></li>
+            <li><b>Czas oczekiwania</b><span>{{ t.turnaround }}</span></li>
+            <li><b>Kod badania</b><span>{{ t.code }}</span></li>
+            <li><b>Skierowanie</b><span>Nie jest wymagane</span></li>
+          </ul>
+        </div>
+
+        <div class="detail__block">
+          <h3>🧪 Jak się przygotować?</h3>
+          <p>{{ t.preparation }}</p>
+        </div>
+
+        <div class="detail__block">
+          <h3>ℹ️ Dobrze wiedzieć</h3>
+          <p>
+            Badanie wykonasz w dowolnym z naszych punktów pobrań bez wcześniejszej rejestracji.
+            Wyniki otrzymasz online na swoim koncie pacjenta — zwykle już następnego dnia roboczego.
+          </p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card buybox">
+          <div class="buybox__price">{{ t.price | price }}</div>
+          <div class="buybox__note">Cena badania, bez kosztu pobrania</div>
+          <a routerLink="/punkty-pobran" class="btn btn--primary btn--block">Znajdź punkt pobrań</a>
+          <a routerLink="/kontakt" class="btn btn--ghost btn--block" style="margin-top:10px">Zapytaj o badanie</a>
+          <ul>
+            <li>Bez skierowania</li>
+            <li>Badanie w punkcie pobrań</li>
+            <li>Wyniki na koncie pacjenta</li>
+            <li>Pobranie w 120 punktach</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  @if (related().length > 0) {
+    <section class="section section--tight">
+      <div class="container">
+        <h2 style="margin-bottom:24px">Podobne badania</h2>
+        <div class="grid grid--3">
+          @for (r of related(); track r.id) {
+            <app-test-card [test]="r" />
+          }
+        </div>
+      </div>
+    </section>
+  }
+} @else {
+  <section class="section">
+    <div class="container empty card">
+      <span class="empty__icon">🤔</span>
+      <h3>Nie znaleziono badania</h3>
+      <p>Badanie o podanym adresie nie istnieje lub zostało przeniesione.</p>
+      <a routerLink="/badania" class="btn btn--primary">Wróć do katalogu</a>
+    </div>
+  </section>
+}

@@ -1,0 +1,68 @@
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs"><a routerLink="/">Strona główna</a> <span>/</span> Badania</nav>
+    <h1>Katalog badań laboratoryjnych</h1>
+    <p>Badania kału dostępne bez skierowania — wyszukaj i poznaj szczegóły.</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container catalog">
+    <!-- sidebar -->
+    <aside class="catalog__side">
+      <div class="card filter">
+        <h3 class="filter__title">Kategorie</h3>
+        <button type="button" class="filter__cat" [class.active]="!kategoria()" (click)="selectCategory(null)">
+          Wszystkie badania
+        </button>
+        @for (cat of categories(); track cat.id) {
+          <button type="button" class="filter__cat" [class.active]="kategoria() === cat.slug"
+                  (click)="selectCategory(cat.slug)">
+            <span>{{ cat.icon }}</span> {{ cat.name }}
+          </button>
+        }
+      </div>
+    </aside>
+
+    <!-- main -->
+    <div class="catalog__main">
+      <form class="catalog__search" (ngSubmit)="applySearch()" role="search">
+        <input
+          class="field"
+          type="search"
+          name="q"
+          [ngModel]="term()"
+          (ngModelChange)="term.set($event)"
+          placeholder="Szukaj badania po nazwie lub kodzie…"
+          aria-label="Szukaj badania" />
+        <button class="btn btn--primary" type="submit">Szukaj</button>
+      </form>
+
+      <div class="catalog__bar">
+        <span class="catalog__count">
+          Znaleziono <b>{{ results().length }}</b>
+          {{ results().length === 1 ? 'badanie' : 'badań' }}
+          @if (activeCategory()) { w kategorii „{{ activeCategory()!.name }}" }
+        </span>
+        @if (kategoria() || term()) {
+          <button type="button" class="catalog__clear" (click)="clearFilters()">✕ Wyczyść filtry</button>
+        }
+      </div>
+
+      @if (results().length > 0) {
+        <div class="grid grid--3">
+          @for (test of results(); track test.id) {
+            <app-test-card [test]="test" />
+          }
+        </div>
+      } @else {
+        <div class="empty card">
+          <span class="empty__icon">🔍</span>
+          <h3>Brak wyników</h3>
+          <p>Nie znaleźliśmy badań dla podanych kryteriów. Spróbuj innej frazy lub wyczyść filtry.</p>
+          <button type="button" class="btn btn--ghost" (click)="clearFilters()">Pokaż wszystkie badania</button>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs"><a routerLink="/">Strona główna</a> <span>/</span> Dla pacjenta</nav>
+    <h1>Dla pacjenta</h1>
+    <p>Wszystko, co musisz wiedzieć, by dobrze przygotować się do badań i sprawnie odebrać wyniki.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Przygotowanie</span>
+      <h2>Jak przygotować się do badań?</h2>
+    </div>
+    <div class="grid grid--4">
+      @for (tip of tips; track tip.title) {
+        <div class="card tip">
+          <span class="tip__icon">{{ tip.icon }}</span>
+          <h3>{{ tip.title }}</h3>
+          <p>{{ tip.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container faq-wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Najczęstsze pytania</h2>
+    </div>
+    <div class="faq">
+      @for (item of faqs; track item.q; let i = $index) {
+        <div class="faq__item card" [class.is-open]="openFaq() === i">
+          <button type="button" class="faq__q" (click)="toggle(i)" [attr.aria-expanded]="openFaq() === i">
+            <span>{{ item.q }}</span>
+            <span class="faq__chevron" aria-hidden="true">⌄</span>
+          </button>
+          @if (openFaq() === i) {
+            <div class="faq__a"><p>{{ item.a }}</p></div>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="text-center" style="margin-top: 32px;">
+      <p class="text-muted">Nie znalazłeś odpowiedzi?</p>
+      <a routerLink="/kontakt" class="btn btn--primary">Napisz do nas</a>
+    </div>
+  </div>
+</section>

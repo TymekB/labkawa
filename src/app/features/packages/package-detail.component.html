@@ -1,0 +1,71 @@
+@if (pkg(); as p) {
+  <section class="page-hero">
+    <div class="container">
+      <nav class="crumbs">
+        <a routerLink="/">Strona główna</a> <span>/</span>
+        <a routerLink="/pakiety">Pakiety</a> <span>/</span> {{ p.name }}
+      </nav>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container detail">
+      <div class="detail__main">
+        <div class="detail__head">
+          @if (p.badge) { <span class="badge badge--hot">{{ p.badge }}</span> }
+          <h1>{{ p.name }}</h1>
+          <p class="detail__lead">{{ p.description }}</p>
+        </div>
+
+        <div class="detail__block">
+          <h3>👤 Dla kogo?</h3>
+          <p>{{ p.forWhom }}</p>
+        </div>
+
+        <div class="detail__block">
+          <h3>🧬 Co obejmuje pakiet ({{ tests().length }})</h3>
+          <ul class="pkg-tests">
+            @for (t of tests(); track t.id) {
+              <li>
+                <a [routerLink]="['/badania', t.slug]">{{ t.name }}</a>
+                <span class="text-muted">{{ t.code }}</span>
+                <b class="price">{{ t.price | price }}</b>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card buybox">
+          @if (savings() > 0) {
+            <div class="buybox__save">Oszczędzasz {{ savings() | price }}</div>
+          }
+          <div class="buybox__price">{{ p.price | price }}</div>
+          @if (separatePrice() > p.price) {
+            <div class="buybox__note">
+              Osobno: <span class="price--old">{{ separatePrice() | price }}</span>
+            </div>
+          }
+          <a routerLink="/punkty-pobran" class="btn btn--primary btn--block">Znajdź punkt pobrań</a>
+          <a routerLink="/kontakt" class="btn btn--ghost btn--block" style="margin-top:10px">Zapytaj o pakiet</a>
+          <ul>
+            <li>{{ tests().length }} badań w jednym pobraniu</li>
+            <li>Bez skierowania</li>
+            <li>Wyniki online</li>
+            <li>Taniej niż osobno</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+} @else {
+  <section class="section">
+    <div class="container empty card">
+      <span class="empty__icon">🤔</span>
+      <h3>Nie znaleziono pakietu</h3>
+      <p>Pakiet o podanym adresie nie istnieje lub został przeniesiony.</p>
+      <a routerLink="/pakiety" class="btn btn--primary">Wróć do pakietów</a>
+    </div>
+  </section>
+}

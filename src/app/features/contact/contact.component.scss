@@ -1,0 +1,30 @@
+.page-hero { background: linear-gradient(160deg, #eaf6fd, #f6fafd); padding: 40px 0 36px; border-bottom: 1px solid var(--line); }
+.page-hero h1 { margin: 10px 0 8px; }
+.page-hero p { color: var(--ink-soft); margin: 0; max-width: 640px; }
+.crumbs { font-size: .85rem; color: var(--muted); }
+.crumbs a { color: var(--brand-700); }
+.crumbs span { margin: 0 6px; }
+
+.contact { display: grid; grid-template-columns: 320px 1fr; gap: 28px; align-items: start; }
+.contact__info { display: flex; flex-direction: column; gap: 16px; }
+.contact__card { padding: 22px; }
+.contact__card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.contact__card p { margin-bottom: 4px; font-weight: 600; }
+
+.contact__form { padding: 32px; }
+.contact__form h2 { margin-bottom: 20px; }
+.form-row { margin-bottom: 18px; }
+.err { color: var(--danger); font-size: .82rem; margin-top: 5px; display: block; }
+
+.contact__thanks { text-align: center; padding: 30px 0; }
+.contact__thanks-icon { font-size: 3rem; display: block; margin-bottom: 12px; }
+.contact__thanks h2 { margin-bottom: 8px; }
+.contact__thanks p { color: var(--ink-soft); margin-bottom: 20px; }
+
+.contact__map { padding: 0; overflow: hidden; }
+.contact__map iframe { display: block; width: 100%; height: 420px; border: 0; }
+
+@media (max-width: 800px) {
+  .contact { grid-template-columns: 1fr; }
+  .contact__map iframe { height: 320px; }
+}
