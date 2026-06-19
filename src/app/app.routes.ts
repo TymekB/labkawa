@@ -38,6 +38,12 @@ export const routes: Routes = [
     title: 'Punkty pobrań — LabKawa',
   },
   {
+    path: 'wyniki-online',
+    loadComponent: () =>
+      import('./features/results/results.component').then((m) => m.ResultsComponent),
+    title: 'Wyniki online — LabKawa',
+  },
+  {
     path: 'dla-pacjenta',
     loadComponent: () =>
       import('./features/patient/patient.component').then((m) => m.PatientComponent),

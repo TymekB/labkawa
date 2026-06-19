@@ -1,0 +1,81 @@
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs"><a routerLink="/">Strona główna</a> <span>/</span> Wyniki online</nav>
+    <h1>Wyniki badań online</h1>
+    <p>Zaloguj się, aby bezpiecznie odebrać wyniki swoich badań — dostępne 24/7.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container results-wrap">
+    @if (!loggedIn()) {
+      <form class="card login" (ngSubmit)="submit()">
+        <div class="login__icon">🔒</div>
+        <h2>Logowanie do wyników</h2>
+        <p class="text-muted">Dane znajdziesz na potwierdzeniu pobrania.</p>
+
+        <div class="login__field">
+          <label for="login">Numer zlecenia</label>
+          <input id="login" class="field" name="login" [ngModel]="login()" (ngModelChange)="login.set($event)"
+                 placeholder="np. 2026/123456" />
+        </div>
+        <div class="login__field">
+          <label for="code">Kod dostępu</label>
+          <input id="code" class="field" type="password" name="code" [ngModel]="code()" (ngModelChange)="code.set($event)"
+                 placeholder="Kod z potwierdzenia" />
+        </div>
+
+        @if (error()) { <p class="login__error">{{ error() }}</p> }
+
+        <button type="submit" class="btn btn--primary btn--block">Zaloguj się</button>
+        <p class="login__hint text-muted">Demo: wpisz dowolny numer i kod, aby zobaczyć przykładowy panel.</p>
+      </form>
+
+      <aside class="card help">
+        <h3>Potrzebujesz pomocy?</h3>
+        <ul>
+          <li>📞 Infolinia: <a href="tel:+48126000000">12 600 00 00</a></li>
+          <li>✉️ <a href="mailto:wyniki@labkawa.pl">wyniki&#64;labkawa.pl</a></li>
+          <li>🕗 Pn–Pt 7:00–18:00</li>
+        </ul>
+        <p class="text-muted">Wyniki są dostępne zwykle następnego dnia roboczego po pobraniu próbki.</p>
+      </aside>
+    } @else {
+      <div class="panel">
+        <div class="panel__head">
+          <div>
+            <h2>Twoje wyniki</h2>
+            <p class="text-muted">Zlecenie {{ login() }}</p>
+          </div>
+          <button type="button" class="btn btn--ghost btn--sm" (click)="logout()">Wyloguj</button>
+        </div>
+
+        <div class="card">
+          <table class="results-table">
+            <thead>
+              <tr><th>Data</th><th>Badanie</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody>
+              @for (r of mockResults; track r.name) {
+                <tr>
+                  <td>{{ r.date }}</td>
+                  <td>{{ r.name }}</td>
+                  <td>
+                    <span class="status" [class.status--ready]="r.status === 'Gotowy'">{{ r.status }}</span>
+                  </td>
+                  <td class="results-table__action">
+                    @if (r.status === 'Gotowy') {
+                      <a class="btn btn--ghost btn--sm" href="#" (click)="$event.preventDefault()">⬇ Pobierz PDF</a>
+                    } @else {
+                      <span class="text-muted">—</span>
+                    }
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    }
+  </div>
+</section>
