@@ -59,7 +59,11 @@
   .hdr__main-inner { justify-content: space-between; }
   .hdr__actions { margin-left: auto; }
   .hdr__burger { display: flex; }
-  .hdr__nav { position: absolute; left: 0; right: 0; display: none; box-shadow: var(--shadow); }
+  .hdr__nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    display: none; background: #fff; box-shadow: var(--shadow);
+    z-index: 200; max-height: calc(100vh - 100%); overflow-y: auto;
+  }
   .hdr__nav.is-open { display: block; }
   .hdr__nav-inner { flex-direction: column; align-items: stretch; }
   .hdr__nav a { border-bottom: 1px solid var(--line); text-align: center; }
