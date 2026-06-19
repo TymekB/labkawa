@@ -25,7 +25,6 @@ import { LogoComponent } from '../logo/logo.component';
           <a routerLink="/badania">Katalog badań</a>
           <a routerLink="/pakiety">Pakiety badań</a>
           <a routerLink="/punkty-pobran">Punkty pobrań</a>
-          <a routerLink="/wyniki-online">Wyniki online</a>
           <a routerLink="/dla-pacjenta">Jak się przygotować</a>
         </div>
 

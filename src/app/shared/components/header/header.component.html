@@ -6,7 +6,6 @@
       <div class="hdr__top-right">
         <a href="#" class="hdr__top-item">Dla firm</a>
         <a href="#" class="hdr__top-item">Pomoc</a>
-        <a routerLink="/wyniki-online" class="hdr__top-item hdr__top-item--accent">🔒 Wyniki online</a>
       </div>
     </div>
   </div>
@@ -30,7 +29,6 @@
       </form>
 
       <div class="hdr__actions">
-        <a routerLink="/wyniki-online" class="btn btn--primary hdr__results-btn">🔒 Wyniki online</a>
         <button class="hdr__burger" type="button" (click)="toggleMobile()" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -44,9 +42,6 @@
       @for (item of nav; track item.link) {
         <a [routerLink]="item.link" routerLinkActive="active" (click)="closeMobile()">{{ item.label }}</a>
       }
-      <a routerLink="/wyniki-online" class="hdr__nav-cta" routerLinkActive="active" (click)="closeMobile()">
-        Wyniki online
-      </a>
     </div>
   </nav>
 </header>

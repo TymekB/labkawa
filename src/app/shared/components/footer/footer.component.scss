@@ -24,7 +24,7 @@
 .ft__col a:hover { color: var(--brand); }
 
 .ft__contact { font-size: .92rem; margin-bottom: 8px; }
-.ft__contact a { color: rgba(255,255,255,.78); }
+.ft__contact a { display: inline; color: rgba(255,255,255,.78); }
 .ft__contact a:hover { color: var(--brand); }
 
 .ft__bottom { border-top: 1px solid rgba(255,255,255,.12); }

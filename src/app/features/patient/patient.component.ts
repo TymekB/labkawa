@@ -24,8 +24,8 @@ export class PatientComponent {
 
   readonly faqs: Faq[] = [
     { q: 'Czy potrzebuję skierowania?', a: 'Nie. Wszystkie badania z naszego katalogu możesz wykonać prywatnie, bez skierowania od lekarza.' },
-    { q: 'Jak szybko otrzymam wyniki?', a: 'Większość wyników jest dostępna online już następnego dnia roboczego. Czas oczekiwania jest podany przy każdym badaniu.' },
-    { q: 'Jak odbieram wyniki?', a: 'Wyniki udostępniamy w panelu „Wyniki online”. Logujesz się numerem zlecenia i kodem z potwierdzenia pobrania.' },
+    { q: 'Jak szybko otrzymam wyniki?', a: 'Czas oczekiwania zależy od badania — badania w kierunku pasożytów 4–5 dni roboczych, posiew kału około 9 dni, panele mikrobiologiczne do 7 dni. Czas jest podany przy każdym badaniu.' },
+    { q: 'Jak odbieram wyniki?', a: 'Wyniki przesyłamy na podany adres pocztowy lub e-mail. Prosimy o podpisanie zgody na przesłanie wyników drogą elektroniczną.' },
     { q: 'Czy mogę zamówić pobranie w domu?', a: 'Tak. W wybranych punktach oferujemy mobilne pobranie w domu pacjenta. Sprawdź dostępność na stronie punktów pobrań.' },
     { q: 'Jak zapłacić za badania?', a: 'Płatność realizujesz bezpośrednio w punkcie pobrań — gotówką lub kartą. Sprzedaż online nie jest dostępna.' },
   ];
