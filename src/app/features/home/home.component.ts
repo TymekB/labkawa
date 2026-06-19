@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CatalogService } from '../../core/services/catalog.service';
@@ -22,7 +22,7 @@ export class HomeComponent {
   readonly catalog = inject(CatalogService);
 
   readonly query = signal('');
-  readonly popular = this.catalog.popularTests;
+  readonly popular = computed(() => this.catalog.popularTests().slice(0, 4));
   readonly topPackages = this.catalog.packages().slice(0, 3);
 
   readonly steps: Step[] = [
