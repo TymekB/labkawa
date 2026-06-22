@@ -143,7 +143,11 @@
 }
 .stats__inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 48px 20px; }
 .stat { text-align: center; color: #fff; }
-.stat__value { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; line-height: 1; }
+.stat__value {
+  font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; line-height: 1.1;
+  min-height: 3.1rem; display: flex; align-items: center; justify-content: center;
+}
+.stat__value--text { font-size: clamp(1.3rem, 2.4vw, 1.65rem); }
 .stat__label { font-size: .95rem; opacity: .9; margin-top: 8px; }
 @media (max-width: 620px) { .stats__inner { grid-template-columns: repeat(2, 1fr); } }
 

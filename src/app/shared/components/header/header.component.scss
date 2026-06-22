@@ -54,6 +54,31 @@
 .hdr__nav a:hover { color: var(--brand-700); }
 .hdr__nav a.active { color: var(--brand-700); border-bottom-color: var(--brand); }
 
+/* nav dropdown (Artykuły) */
+.hdr__dropdown { position: relative; display: inline-flex; align-items: center; }
+.hdr__dropdown-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 14px 16px; font: inherit; font-weight: 600; font-size: .95rem;
+  color: var(--ink-soft); background: none; border: none; cursor: pointer;
+  border-bottom: 3px solid transparent;
+}
+.hdr__dropdown-toggle:hover,
+.hdr__dropdown.is-open .hdr__dropdown-toggle { color: var(--brand-700); }
+.hdr__caret { font-size: .9rem; transition: transform .15s ease; }
+.hdr__dropdown.is-open .hdr__caret { transform: rotate(180deg); }
+.hdr__dropdown-menu {
+  position: absolute; top: 100%; left: 0; min-width: 250px;
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: var(--shadow); padding: 8px; display: none; z-index: 200;
+}
+.hdr__dropdown.is-open .hdr__dropdown-menu { display: block; }
+.hdr__dropdown-menu a {
+  display: block; padding: 10px 12px; border: 0; border-radius: 8px;
+  font-size: .9rem; font-weight: 600; color: var(--ink-soft);
+}
+.hdr__dropdown-menu a:hover,
+.hdr__dropdown-menu a.active { background: var(--brand-50); color: var(--brand-700); border: 0; }
+
 @media (max-width: 920px) {
   .hdr__search { display: none; }
   .hdr__main-inner { justify-content: space-between; }
@@ -68,4 +93,12 @@
   .hdr__nav-inner { flex-direction: column; align-items: stretch; }
   .hdr__nav a { border-bottom: 1px solid var(--line); text-align: center; }
   .hdr__nav a.active { border-bottom-color: var(--line); background: var(--brand-50); }
+
+  .hdr__dropdown { display: block; }
+  .hdr__dropdown-toggle { width: 100%; justify-content: center; border-bottom: 1px solid var(--line); }
+  .hdr__dropdown-menu {
+    position: static; min-width: 0; border: 0; border-radius: 0;
+    box-shadow: none; padding: 0; background: var(--bg);
+  }
+  .hdr__dropdown-menu a { text-align: center; border-bottom: 1px solid var(--line); border-radius: 0; }
 }

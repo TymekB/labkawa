@@ -176,7 +176,7 @@
   <div class="container stats__inner">
     @for (s of stats; track s.label) {
       <div class="stat">
-        <div class="stat__value">{{ s.value | nbsp }}</div>
+        <div class="stat__value" [class.stat__value--text]="s.text">{{ s.value | nbsp }}</div>
         <div class="stat__label">{{ s.label | nbsp }}</div>
       </div>
     }

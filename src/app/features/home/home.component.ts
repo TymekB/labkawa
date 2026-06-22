@@ -7,7 +7,7 @@ import { PackageCardComponent } from '../../shared/components/package-card/packa
 import { NbspPipe } from '../../shared/pipes/nbsp.pipe';
 
 interface Step { num: number; title: string; text: string; icon: string; }
-interface Stat { value: string; label: string; }
+interface Stat { value: string; label: string; text?: boolean; }
 interface Scope { label: string; text: string; icon: string; }
 interface Spec { label: string; text: string; icon: string; priority?: boolean; }
 interface Knowledge { title: string; text: string; icon: string; }
@@ -38,8 +38,8 @@ export class HomeComponent {
   readonly stats: Stat[] = [
     { value: '1998', label: 'rok założenia laboratorium' },
     { value: '39+', label: 'lat doświadczenia kierownika laboratorium' },
-    { value: 'Cała Polska', label: 'pacjenci z kraju i zagranicy' },
-    { value: 'Kał i pasożyty', label: 'nasza specjalizacja' },
+    { value: 'Cała Polska', label: 'pacjenci z kraju i zagranicy', text: true },
+    { value: 'Kał i pasożyty', label: 'nasza specjalizacja', text: true },
   ];
 
   readonly about = {

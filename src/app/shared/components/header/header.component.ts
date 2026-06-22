@@ -18,13 +18,21 @@ export class HeaderComponent {
 
   readonly query = signal('');
   readonly mobileOpen = signal(false);
+  readonly articlesOpen = signal(false);
 
   readonly nav: NavItem[] = [
     { label: 'Badania', link: '/badania' },
     { label: 'Pakiety', link: '/pakiety' },
     { label: 'Punkty pobrań', link: '/punkty-pobran' },
     { label: 'Dla pacjenta', link: '/dla-pacjenta' },
-    { label: 'Kontakt', link: '/kontakt' },
+  ];
+
+  readonly articles: NavItem[] = [
+    { label: 'Badanie kału na pasożyty', link: '/badanie-kalu-na-pasozyty' },
+    { label: 'Krew utajona w kale', link: '/krew-utajona-w-kale' },
+    { label: 'Badania mykologiczne', link: '/badania-mykologiczne' },
+    { label: 'Diagnostyka jelit', link: '/diagnostyka-jelit' },
+    { label: 'Jak pobrać próbkę kału', link: '/jak-pobrac-probke-kalu' },
   ];
 
   toggleMobile(): void {
@@ -33,6 +41,11 @@ export class HeaderComponent {
 
   closeMobile(): void {
     this.mobileOpen.set(false);
+    this.articlesOpen.set(false);
+  }
+
+  toggleArticles(): void {
+    this.articlesOpen.update((v) => !v);
   }
 
   search(): void {

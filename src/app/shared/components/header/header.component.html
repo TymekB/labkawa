@@ -43,6 +43,19 @@
       @for (item of nav; track item.link) {
         <a [routerLink]="item.link" routerLinkActive="active" (click)="closeMobile()">{{ item.label }}</a>
       }
+
+      <div class="hdr__dropdown" [class.is-open]="articlesOpen()">
+        <button type="button" class="hdr__dropdown-toggle" (click)="toggleArticles()" [attr.aria-expanded]="articlesOpen()">
+          Artykuły <span class="hdr__caret" aria-hidden="true">⌄</span>
+        </button>
+        <div class="hdr__dropdown-menu">
+          @for (a of articles; track a.link) {
+            <a [routerLink]="a.link" routerLinkActive="active" (click)="closeMobile()">{{ a.label }}</a>
+          }
+        </div>
+      </div>
+
+      <a routerLink="/kontakt" routerLinkActive="active" (click)="closeMobile()">Kontakt</a>
     </div>
   </nav>
 </header>
