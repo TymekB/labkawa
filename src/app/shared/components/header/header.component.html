@@ -5,7 +5,7 @@
       <span class="hdr__top-item">📞 Kontakt: <a href="tel:+48158362888">+48 15 836 28 88</a></span>
       <div class="hdr__top-right">
         <a href="#" class="hdr__top-item">Dla firm</a>
-        <a href="#" class="hdr__top-item">Pomoc</a>
+        <a routerLink="/dla-pacjenta" class="hdr__top-item">Pomoc</a>
         <a routerLink="/wyniki-online" class="hdr__top-item hdr__top-item--accent">🔒 Wyniki online</a>
       </div>
     </div>
@@ -46,7 +46,7 @@
 
       <div class="hdr__dropdown" [class.is-open]="articlesOpen()">
         <button type="button" class="hdr__dropdown-toggle" (click)="toggleArticles()" [attr.aria-expanded]="articlesOpen()">
-          Artykuły <span class="hdr__caret" aria-hidden="true">⌄</span>
+          Artykuły <span class="hdr__caret" aria-hidden="true"></span>
         </button>
         <div class="hdr__dropdown-menu">
           @for (a of articles; track a.link) {

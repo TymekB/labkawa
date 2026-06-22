@@ -14,9 +14,8 @@ import { LogoComponent } from '../logo/logo.component';
           <app-logo [light]="true" />
           <p>Niepubliczny Zakład Opieki Zdrowotnej. Diagnostyka laboratoryjna na najwyższym poziomie od ponad 20 lat.</p>
           <div class="ft__social" aria-label="Media społecznościowe">
-            <a href="#" aria-label="Facebook">f</a>
             <a href="#" aria-label="Instagram">ig</a>
-            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Google">G</a>
           </div>
         </div>
 
