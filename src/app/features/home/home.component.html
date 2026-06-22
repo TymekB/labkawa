@@ -54,15 +54,22 @@
       </svg>
     </span>
     <h2 class="intro__title">NZOZ Laboratorium Diagnostyczne „LAB”</h2>
-    <p class="intro__text">
-      Nasze laboratorium to nowoczesna placówka medyczna, której nadrzędnym celem jest
-      zapewnienie pacjentom rzetelnych wyników badań, wspierając ich zdrowie z&nbsp;pełnym
-      zaangażowaniem. Pod kierownictwem <strong>Marii Kawy</strong> — specjalisty II stopnia
-      w&nbsp;zakresie analityki i&nbsp;mikrobiologii, z&nbsp;wieloletnim doświadczeniem — oferujemy szeroką gamę usług diagnostycznych, opartych
-      na najnowocześniejszych technologiach. Dzięki innowacyjnemu sprzętowi oraz dbałości
-      o&nbsp;najwyższe standardy, gwarantujemy szybkie i&nbsp;trafne diagnozy, które pomagają pacjentom
-      na każdym etapie leczenia, zapewniając im spokój i&nbsp;wsparcie w&nbsp;drodze do zdrowia.
-    </p>
+    @for (p of about.intro; track p) {
+      <p class="intro__text">{{ p | nbsp }}</p>
+    }
+
+    <h3 class="intro__sub">Ponad 25 lat doświadczenia</h3>
+    <p class="intro__text">{{ about.bio | nbsp }}</p>
+
+    <h3 class="intro__sub">Dlaczego lekarze kierują do nas próbki?</h3>
+    <ul class="intro__reasons">
+      @for (r of about.reasons; track r) {
+        <li>{{ r | nbsp }}</li>
+      }
+    </ul>
+
+    <h3 class="intro__sub">Nasza misja</h3>
+    <p class="intro__text">{{ about.mission | nbsp }}</p>
   </div>
 </section>
 
@@ -172,7 +179,7 @@
     @for (s of stats; track s.label) {
       <div class="stat">
         <div class="stat__value">{{ s.value }}</div>
-        <div class="stat__label">{{ s.label }}</div>
+        <div class="stat__label">{{ s.label | nbsp }}</div>
       </div>
     }
   </div>

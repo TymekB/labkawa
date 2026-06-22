@@ -42,7 +42,19 @@
   text-transform: uppercase; letter-spacing: .01em;
   margin-bottom: 22px;
 }
-.intro__text { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.8; margin: 0; }
+.intro__text { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.8; margin: 0 0 16px; }
+.intro__sub { font-size: 1.25rem; margin: 28px 0 12px; color: var(--ink); }
+.intro__reasons {
+  list-style: none; padding: 0; margin: 0 auto 8px; max-width: 560px; text-align: left;
+}
+.intro__reasons li {
+  position: relative; padding: 9px 0 9px 32px; color: var(--ink-soft);
+  border-bottom: 1px dashed var(--line); line-height: 1.5;
+}
+.intro__reasons li::before {
+  content: '✔'; position: absolute; left: 0; top: 9px;
+  color: var(--success); font-weight: 800;
+}
 
 /* ZAKRES BADAŃ */
 .scopes__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }

@@ -29,12 +29,12 @@ import { LogoComponent } from '../logo/logo.component';
         </div>
 
         <div class="ft__col">
-          <h4>Firma</h4>
-          <a href="#">O nas</a>
-          <a href="#">Dla firm</a>
-          <a href="#">Współpraca</a>
-          <a href="#">Kariera</a>
-          <a routerLink="/kontakt">Kontakt</a>
+          <h4>Wiedza</h4>
+          <a routerLink="/badanie-kalu-na-pasozyty">Badanie kału na pasożyty</a>
+          <a routerLink="/krew-utajona-w-kale">Krew utajona w kale</a>
+          <a routerLink="/badania-mykologiczne">Badania mykologiczne</a>
+          <a routerLink="/diagnostyka-jelit">Diagnostyka jelit</a>
+          <a routerLink="/jak-pobrac-probke-kalu">Jak pobrać próbkę kału</a>
         </div>
 
         <div class="ft__col">

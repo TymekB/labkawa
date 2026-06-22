@@ -55,5 +55,35 @@ export const routes: Routes = [
       import('./features/contact/contact.component').then((m) => m.ContactComponent),
     title: 'Kontakt — LabKawa',
   },
+  {
+    path: 'badanie-kalu-na-pasozyty',
+    loadComponent: () => import('./features/info/info-page.component').then((m) => m.InfoPageComponent),
+    data: { slug: 'badanie-kalu-na-pasozyty' },
+    title: 'Badanie kału na pasożyty — LabKawa',
+  },
+  {
+    path: 'krew-utajona-w-kale',
+    loadComponent: () => import('./features/info/info-page.component').then((m) => m.InfoPageComponent),
+    data: { slug: 'krew-utajona-w-kale' },
+    title: 'Krew utajona w kale — LabKawa',
+  },
+  {
+    path: 'badania-mykologiczne',
+    loadComponent: () => import('./features/info/info-page.component').then((m) => m.InfoPageComponent),
+    data: { slug: 'badania-mykologiczne' },
+    title: 'Badania mykologiczne — LabKawa',
+  },
+  {
+    path: 'diagnostyka-jelit',
+    loadComponent: () => import('./features/info/info-page.component').then((m) => m.InfoPageComponent),
+    data: { slug: 'diagnostyka-jelit' },
+    title: 'Diagnostyka jelit — LabKawa',
+  },
+  {
+    path: 'jak-pobrac-probke-kalu',
+    loadComponent: () => import('./features/info/info-page.component').then((m) => m.InfoPageComponent),
+    data: { slug: 'jak-pobrac-probke-kalu' },
+    title: 'Jak pobrać próbkę kału — LabKawa',
+  },
   { path: '**', redirectTo: '' },
 ];

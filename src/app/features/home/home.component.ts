@@ -36,11 +36,27 @@ export class HomeComponent {
   ];
 
   readonly stats: Stat[] = [
-    { value: '30+', label: 'badań kału' },
-    { value: '13', label: 'paneli diagnostycznych' },
-    { value: '4–5 dni', label: 'wynik badania pasożytów' },
-    { value: '20 lat', label: 'doświadczenia' },
+    { value: '1998', label: 'rok założenia laboratorium' },
+    { value: '39+', label: 'lat doświadczenia kierownika laboratorium' },
+    { value: '🌍', label: 'pacjenci z całej Polski i zagranicy' },
+    { value: '🦠', label: 'specjalizacja: badania kału i pasożytologia' },
   ];
+
+  readonly about = {
+    intro: [
+      'Laboratorium Kawa działa nieprzerwanie od 1998 roku, zapewniając rzetelną diagnostykę laboratoryjną pacjentom z całej Polski. Przez ponad ćwierć wieku wykonaliśmy tysiące badań, zdobywając zaufanie zarówno pacjentów, jak i lekarzy różnych specjalizacji.',
+      'Naszą szczególną renomę zbudowaliśmy w zakresie diagnostyki kału, badań pasożytologicznych oraz badań mikrobiologicznych. To właśnie dlatego próbki do badań trafiają do nas nie tylko z Tarnobrzega, Gorzyc i Podkarpacia, ale również z wielu regionów Polski, a także od pacjentów przebywających za granicą.',
+    ],
+    bio: 'Za laboratorium stoi Maria Kawa, diagnosta laboratoryjny, absolwentka Collegium Medicum Uniwersytetu Jagiellońskiego, która ukończyła studia w 1986 roku. Wieloletnie doświadczenie zawodowe oraz nieustanne doskonalenie metod diagnostycznych pozwoliły stworzyć laboratorium cenione za dokładność, rzetelność i indywidualne podejście do każdego badania.',
+    reasons: [
+      'Wieloletnie doświadczenie w diagnostyce laboratoryjnej',
+      'Specjalizacja w badaniach kału i diagnostyce pasożytów',
+      'Staranna analiza każdej próbki',
+      'Bezpośredni nadzór wykwalifikowanego diagnosty laboratoryjnego',
+      'Zaufanie budowane od 1998 roku',
+    ],
+    mission: 'Wierzymy, że dobra diagnostyka jest fundamentem skutecznego leczenia. Dlatego od ponad 25 lat dostarczamy pacjentom i lekarzom wiarygodne wyniki badań, pomagając w podejmowaniu właściwych decyzji diagnostycznych i terapeutycznych.',
+  };
 
   readonly scopes: Scope[] = [
     {
