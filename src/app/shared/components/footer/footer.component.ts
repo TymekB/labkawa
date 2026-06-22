@@ -15,7 +15,8 @@ import { LogoComponent } from '../logo/logo.component';
           <p>Niepubliczny Zakład Opieki Zdrowotnej. Diagnostyka laboratoryjna na najwyższym poziomie od ponad 20 lat.</p>
           <div class="ft__social" aria-label="Media społecznościowe">
             <a href="#" aria-label="Instagram">ig</a>
-            <a href="#" aria-label="Google">G</a>
+            <a href="https://www.google.com/search?q=Niepubliczny+Zak%C5%82ad+Opieki+Zdrowotnej+Laboratorium+Diagnostyczne+%22LAB%22+Opinie&hl=pl&tbm=lcl&rldimm=6633722661145730379#lkt=LocalPoiReviews"
+               target="_blank" rel="noopener" aria-label="Opinie w Google">G</a>
           </div>
         </div>
 
