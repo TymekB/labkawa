@@ -5,7 +5,6 @@ import { CatalogService } from '../../core/services/catalog.service';
 import { TestCardComponent } from '../../shared/components/test-card/test-card.component';
 import { PackageCardComponent } from '../../shared/components/package-card/package-card.component';
 import { NbspPipe } from '../../shared/pipes/nbsp.pipe';
-import { GoogleReviewsComponent } from '../reviews/google-reviews.component';
 
 interface Step { num: number; title: string; text: string; icon: string; }
 interface Stat { value: string; label: string; text?: boolean; }
@@ -16,7 +15,7 @@ interface Knowledge { title: string; text: string; icon: string; }
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, FormsModule, TestCardComponent, PackageCardComponent, NbspPipe, GoogleReviewsComponent],
+  imports: [RouterLink, FormsModule, TestCardComponent, PackageCardComponent, NbspPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
