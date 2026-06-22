@@ -38,8 +38,8 @@ export class HomeComponent {
   readonly stats: Stat[] = [
     { value: '1998', label: 'rok założenia laboratorium' },
     { value: '39+', label: 'lat doświadczenia kierownika laboratorium' },
-    { value: '🌍', label: 'pacjenci z całej Polski i zagranicy' },
-    { value: '🦠', label: 'specjalizacja: badania kału i pasożytologia' },
+    { value: 'Cała Polska', label: 'pacjenci z kraju i zagranicy' },
+    { value: 'Kał i pasożyty', label: 'nasza specjalizacja' },
   ];
 
   readonly about = {
@@ -88,11 +88,11 @@ export class HomeComponent {
 
   readonly specializations: Spec[] = [
     { label: 'Panele ginekologiczne', icon: '🌸', priority: true, text: 'Priorytetowy obszar naszego laboratorium — kompleksowa diagnostyka ginekologiczna we współpracy z lekarzami w powiecie.' },
-    { label: 'Diagnostyka prenatalna', icon: '🤰', text: 'Badania wspierające zdrowie matki i dziecka na każdym etapie ciąży.' },
+    { label: 'Diagnostyka prenatalna', icon: '👶', text: 'Badania wspierające zdrowie matki i dziecka na każdym etapie ciąży.' },
     { label: 'Zdrowie kobiet i mężczyzn', icon: '⚕️', text: 'Diagnostyka dopasowana do potrzeb kobiet i mężczyzn na każdym etapie życia.' },
     { label: 'Diagnostyka hormonalna', icon: '⚗️', text: 'Ocena gospodarki hormonalnej — tarczyca, hormony płciowe i inne kluczowe parametry.' },
     { label: 'Diagnostyka w autyzmie', icon: '🧩', text: 'Badania laboratoryjne wspierające diagnostykę i monitorowanie spektrum autyzmu.' },
-    { label: 'Trichologia', icon: '💇', text: 'Diagnostyka problemów skóry głowy i włosów we współpracy z trichologami.' },
+    { label: 'Trychologia', icon: '✂️', text: 'Diagnostyka problemów skóry głowy i włosów we współpracy z trychologami.' },
     { label: 'Gastrologia', icon: '🩺', text: 'Badania układu pokarmowego wspierające pracę gastrologów.' },
   ];
 

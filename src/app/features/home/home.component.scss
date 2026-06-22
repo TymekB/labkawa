@@ -44,6 +44,14 @@
 }
 .intro__text { font-size: 1.1rem; color: var(--ink-soft); line-height: 1.8; margin: 0 0 16px; }
 .intro__sub { font-size: 1.25rem; margin: 28px 0 12px; color: var(--ink); }
+.intro__person { margin: 4px 0 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.intro__person img {
+  width: 168px; height: 168px; border-radius: 50%; object-fit: cover;
+  border: 4px solid #fff; box-shadow: var(--shadow);
+}
+.intro__person figcaption { display: flex; flex-direction: column; line-height: 1.3; }
+.intro__person figcaption strong { font-size: 1.05rem; color: var(--ink); }
+.intro__person figcaption span { font-size: .85rem; color: var(--muted); }
 .intro__reasons {
   list-style: none; padding: 0; margin: 0 auto 8px; max-width: 560px; text-align: left;
 }

@@ -21,7 +21,8 @@ import { NbspPipe } from '../../shared/pipes/nbsp.pipe';
       </section>
 
       <section class="section section--tight">
-        <div class="container ip-body">
+        <div class="container">
+          <div class="ip-body">
           @for (s of p.sections; track s.heading) {
             <div class="ip-block">
               <h2>{{ s.heading | nbsp }}</h2>
@@ -47,6 +48,7 @@ import { NbspPipe } from '../../shared/pipes/nbsp.pipe';
               }
             </div>
           }
+          </div>
         </div>
       </section>
     } @else {
