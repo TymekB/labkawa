@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { NbspPipe } from '../../shared/pipes/nbsp.pipe';
 
 interface Faq { q: string; a: string; }
 interface Tip { icon: string; title: string; text: string; }
@@ -7,7 +8,7 @@ interface Tip { icon: string; title: string; text: string; }
 @Component({
   selector: 'app-patient',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, NbspPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './patient.component.html',
   styleUrl: './patient.component.scss',

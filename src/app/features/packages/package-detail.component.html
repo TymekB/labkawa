@@ -13,13 +13,13 @@
       <div class="detail__main">
         <div class="detail__head">
           @if (p.badge) { <span class="badge badge--hot">{{ p.badge }}</span> }
-          <h1>{{ p.name }}</h1>
-          <p class="detail__lead">{{ p.description }}</p>
+          <h1>{{ p.name | nbsp }}</h1>
+          <p class="detail__lead">{{ p.description | nbsp }}</p>
         </div>
 
         <div class="detail__block">
           <h3>👤 Dla kogo?</h3>
-          <p>{{ p.forWhom }}</p>
+          <p>{{ p.forWhom | nbsp }}</p>
         </div>
 
         <div class="detail__block">
@@ -27,7 +27,7 @@
           <ul class="pkg-tests">
             @for (t of tests(); track t.id) {
               <li>
-                <a [routerLink]="['/badania', t.slug]">{{ t.name }}</a>
+                <a [routerLink]="['/badania', t.slug]">{{ t.name | nbsp }}</a>
                 <span class="text-muted">{{ t.code }}</span>
                 <b class="price">{{ t.price | price }}</b>
               </li>

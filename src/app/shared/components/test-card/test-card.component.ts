@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LabTest } from '../../../core/models/catalog.models';
 import { PricePipe } from '../../pipes/price.pipe';
+import { NbspPipe } from '../../pipes/nbsp.pipe';
 
 @Component({
   selector: 'app-test-card',
   standalone: true,
-  imports: [RouterLink, PricePipe],
+  imports: [RouterLink, PricePipe, NbspPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <article class="card tc">
@@ -15,9 +16,9 @@ import { PricePipe } from '../../pipes/price.pipe';
         @if (test().popular) { <span class="badge badge--hot">Popularne</span> }
       </div>
       <h3 class="tc__name">
-        <a [routerLink]="['/badania', test().slug]">{{ test().name }}</a>
+        <a [routerLink]="['/badania', test().slug]">{{ test().name | nbsp }}</a>
       </h3>
-      <p class="tc__desc">{{ test().description }}</p>
+      <p class="tc__desc">{{ test().description | nbsp }}</p>
       <ul class="tc__meta">
         <li>🧪 {{ test().material }}</li>
         <li>⏱ {{ test().turnaround }}</li>

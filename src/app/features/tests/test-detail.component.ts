@@ -8,12 +8,13 @@ import {
 import { RouterLink } from '@angular/router';
 import { CatalogService } from '../../core/services/catalog.service';
 import { PricePipe } from '../../shared/pipes/price.pipe';
+import { NbspPipe } from '../../shared/pipes/nbsp.pipe';
 import { TestCardComponent } from '../../shared/components/test-card/test-card.component';
 
 @Component({
   selector: 'app-test-detail',
   standalone: true,
-  imports: [RouterLink, PricePipe, TestCardComponent],
+  imports: [RouterLink, PricePipe, NbspPipe, TestCardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './test-detail.component.html',
   styleUrl: './tests.scss',

@@ -3,10 +3,10 @@
   <div class="container hero__inner">
     <div class="hero__content">
       <span class="eyebrow">Niepubliczny Zakład Opieki Zdrowotnej</span>
-      <h1>Badania laboratoryjne <span>bez skierowania</span> i bez kolejek</h1>
+      <h1>Badania laboratoryjne <span>bez skierowania</span> i&nbsp;bez kolejek</h1>
       <p class="hero__lead">
-        Wykonasz u nas badania prywatnie oraz w ramach <strong>NFZ</strong>. Wybierz badania
-        z katalogu, dostarcz materiał do laboratorium, a wyniki odbierzesz pocztą elektroniczną
+        Wykonasz u&nbsp;nas badania prywatnie oraz w&nbsp;ramach <strong>NFZ</strong>. Wybierz badania
+        z&nbsp;katalogu, dostarcz materiał do laboratorium, a&nbsp;wyniki odbierzesz pocztą elektroniczną
         lub stacjonarnie. Profilaktyka zdrowia jeszcze nigdy nie była tak prosta.
       </p>
 
@@ -56,12 +56,12 @@
     <h2 class="intro__title">NZOZ Laboratorium Diagnostyczne „LAB”</h2>
     <p class="intro__text">
       Nasze laboratorium to nowoczesna placówka medyczna, której nadrzędnym celem jest
-      zapewnienie pacjentom rzetelnych wyników badań, wspierając ich zdrowie z pełnym
+      zapewnienie pacjentom rzetelnych wyników badań, wspierając ich zdrowie z&nbsp;pełnym
       zaangażowaniem. Pod kierownictwem <strong>Marii Kawy</strong> — specjalisty II stopnia
-      w zakresie analityki i mikrobiologii, z wieloletnim doświadczeniem — oferujemy szeroką gamę usług diagnostycznych, opartych
+      w&nbsp;zakresie analityki i&nbsp;mikrobiologii, z&nbsp;wieloletnim doświadczeniem — oferujemy szeroką gamę usług diagnostycznych, opartych
       na najnowocześniejszych technologiach. Dzięki innowacyjnemu sprzętowi oraz dbałości
-      o najwyższe standardy, gwarantujemy szybkie i trafne diagnozy, które pomagają pacjentom
-      na każdym etapie leczenia, zapewniając im spokój i wsparcie w drodze do zdrowia.
+      o&nbsp;najwyższe standardy, gwarantujemy szybkie i&nbsp;trafne diagnozy, które pomagają pacjentom
+      na każdym etapie leczenia, zapewniając im spokój i&nbsp;wsparcie w&nbsp;drodze do zdrowia.
     </p>
   </div>
 </section>
@@ -72,15 +72,15 @@
     <div class="section-head">
       <span class="eyebrow">Nasze specjalizacje</span>
       <h2>Obszary, w których się specjalizujemy</h2>
-      <p>Współpracujemy z wieloma lekarzami w powiecie, wspierając diagnostykę w kluczowych dziedzinach medycyny.</p>
+      <p>Współpracujemy z&nbsp;wieloma lekarzami w&nbsp;powiecie, wspierając diagnostykę w&nbsp;kluczowych dziedzinach medycyny.</p>
     </div>
     <div class="spec__grid">
       @for (s of specializations; track s.label) {
         <article class="card spec__card" [class.spec__card--priority]="s.priority">
           @if (s.priority) { <span class="spec__badge">Priorytet</span> }
           <span class="spec__icon" aria-hidden="true">{{ s.icon }}</span>
-          <h3 class="spec__label">{{ s.label }}</h3>
-          <p class="spec__text">{{ s.text }}</p>
+          <h3 class="spec__label">{{ s.label | nbsp }}</h3>
+          <p class="spec__text">{{ s.text | nbsp }}</p>
         </article>
       }
     </div>
@@ -93,16 +93,16 @@
     <div class="section-head">
       <span class="eyebrow">Nasza diagnostyka</span>
       <h2>Oferujemy szeroki zakres badań diagnostycznych</h2>
-      <p>Od diagnostyki pasożytniczej i mikrobiologicznej po ocenę mikroflory i markery stanu zapalnego.</p>
+      <p>Od diagnostyki pasożytniczej i&nbsp;mikrobiologicznej po ocenę mikroflory i&nbsp;markery stanu zapalnego.</p>
     </div>
     <div class="scopes__grid">
       @for (scope of scopes; track scope.label; let i = $index) {
         <article class="card scope" [class.scope--wide]="i === 0">
           <div class="scope__top">
             <span class="scope__icon" aria-hidden="true">{{ scope.icon }}</span>
-            <h3 class="scope__label">{{ scope.label }}</h3>
+            <h3 class="scope__label">{{ scope.label | nbsp }}</h3>
           </div>
-          <p class="scope__text">{{ scope.text }}</p>
+          <p class="scope__text">{{ scope.text | nbsp }}</p>
         </article>
       }
     </div>
@@ -140,7 +140,7 @@
           <div class="step__badge">{{ step.icon }}</div>
           <div class="step__num">Krok {{ step.num }}</div>
           <h3>{{ step.title }}</h3>
-          <p>{{ step.text }}</p>
+          <p>{{ step.text | nbsp }}</p>
         </div>
       }
     </div>
@@ -190,8 +190,8 @@
       @for (k of knowledge; track k.title) {
         <article class="card knowledge__card">
           <span class="knowledge__icon" aria-hidden="true">{{ k.icon }}</span>
-          <h3 class="knowledge__title">{{ k.title }}</h3>
-          <p class="knowledge__text">{{ k.text }}</p>
+          <h3 class="knowledge__title">{{ k.title | nbsp }}</h3>
+          <p class="knowledge__text">{{ k.text | nbsp }}</p>
         </article>
       }
     </div>
@@ -204,7 +204,7 @@
     <div class="cta">
       <div class="cta__text">
         <h2>Masz pytania? Pomożemy Ci dobrać badania</h2>
-        <p>Nasi konsultanci pomogą wybrać odpowiedni pakiet i odpowiedzą na pytania dotyczące przygotowania.</p>
+        <p>Nasi konsultanci pomogą wybrać odpowiedni pakiet i&nbsp;odpowiedzą na pytania dotyczące przygotowania.</p>
       </div>
       <div class="cta__actions">
         <a routerLink="/kontakt" class="btn btn--white">Skontaktuj się</a>

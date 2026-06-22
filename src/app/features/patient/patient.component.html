@@ -17,7 +17,7 @@
         <div class="card tip">
           <span class="tip__icon">{{ tip.icon }}</span>
           <h3>{{ tip.title }}</h3>
-          <p>{{ tip.text }}</p>
+          <p>{{ tip.text | nbsp }}</p>
         </div>
       }
     </div>
@@ -34,11 +34,11 @@
       @for (item of faqs; track item.q; let i = $index) {
         <div class="faq__item card" [class.is-open]="openFaq() === i">
           <button type="button" class="faq__q" (click)="toggle(i)" [attr.aria-expanded]="openFaq() === i">
-            <span>{{ item.q }}</span>
+            <span>{{ item.q | nbsp }}</span>
             <span class="faq__chevron" aria-hidden="true">⌄</span>
           </button>
           @if (openFaq() === i) {
-            <div class="faq__a"><p>{{ item.a }}</p></div>
+            <div class="faq__a"><p>{{ item.a | nbsp }}</p></div>
           }
         </div>
       }

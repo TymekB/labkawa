@@ -3,11 +3,12 @@ import { RouterLink } from '@angular/router';
 import { TestPackage } from '../../../core/models/catalog.models';
 import { CatalogService } from '../../../core/services/catalog.service';
 import { PricePipe } from '../../pipes/price.pipe';
+import { NbspPipe } from '../../pipes/nbsp.pipe';
 
 @Component({
   selector: 'app-package-card',
   standalone: true,
-  imports: [RouterLink, PricePipe],
+  imports: [RouterLink, PricePipe, NbspPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <article class="card pc">
@@ -15,9 +16,9 @@ import { PricePipe } from '../../pipes/price.pipe';
         <span class="pc__ribbon" [class.pc__ribbon--promo]="pkg().badge === 'Promocja'">{{ pkg().badge }}</span>
       }
       <h3 class="pc__name">
-        <a [routerLink]="['/pakiety', pkg().slug]">{{ pkg().name }}</a>
+        <a [routerLink]="['/pakiety', pkg().slug]">{{ pkg().name | nbsp }}</a>
       </h3>
-      <p class="pc__desc">{{ pkg().description }}</p>
+      <p class="pc__desc">{{ pkg().description | nbsp }}</p>
       <p class="pc__count">📋 {{ pkg().testCodes.length }} badań w pakiecie</p>
       <ul class="pc__tests">
         @for (t of tests(); track t.id) {

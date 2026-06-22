@@ -18,8 +18,8 @@
               {{ category()!.name }}
             </a>
           }
-          <h1>{{ t.name }}</h1>
-          <p class="detail__lead">{{ t.description }}</p>
+          <h1>{{ t.name | nbsp }}</h1>
+          <p class="detail__lead">{{ t.description | nbsp }}</p>
         </div>
 
         <div class="detail__block">
@@ -34,14 +34,14 @@
 
         <div class="detail__block">
           <h3>🧪 Jak się przygotować?</h3>
-          <p>{{ t.preparation }}</p>
+          <p>{{ t.preparation | nbsp }}</p>
         </div>
 
         <div class="detail__block">
           <h3>ℹ️ Dobrze wiedzieć</h3>
           <p>
-            Badanie wykonasz w dowolnym z naszych punktów pobrań bez wcześniejszej rejestracji.
-            Wyniki otrzymasz online na swoim koncie pacjenta — zwykle już następnego dnia roboczego.
+            Badanie wykonasz w&nbsp;dowolnym z&nbsp;naszych punktów pobrań bez wcześniejszej rejestracji.
+            Wyniki przekażemy pocztą elektroniczną lub do odbioru stacjonarnego — zwykle już w&nbsp;ciągu kilku dni roboczych.
           </p>
         </div>
       </div>
@@ -54,9 +54,8 @@
           <a routerLink="/kontakt" class="btn btn--ghost btn--block" style="margin-top:10px">Zapytaj o badanie</a>
           <ul>
             <li>Bez skierowania</li>
-            <li>Badanie w punkcie pobrań</li>
-            <li>Wyniki na koncie pacjenta</li>
-            <li>Pobranie w 120 punktach</li>
+            <li>Badanie w&nbsp;punkcie pobrań</li>
+            <li>Wyniki pocztą elektroniczną lub stacjonarnie</li>
           </ul>
         </div>
       </aside>

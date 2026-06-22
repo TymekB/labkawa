@@ -8,11 +8,12 @@ import {
 import { RouterLink } from '@angular/router';
 import { CatalogService } from '../../core/services/catalog.service';
 import { PricePipe } from '../../shared/pipes/price.pipe';
+import { NbspPipe } from '../../shared/pipes/nbsp.pipe';
 
 @Component({
   selector: 'app-package-detail',
   standalone: true,
-  imports: [RouterLink, PricePipe],
+  imports: [RouterLink, PricePipe, NbspPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './package-detail.component.html',
   styleUrl: '../tests/tests.scss',
