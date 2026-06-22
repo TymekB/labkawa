@@ -8,6 +8,8 @@ import { PackageCardComponent } from '../../shared/components/package-card/packa
 interface Step { num: number; title: string; text: string; icon: string; }
 interface Stat { value: string; label: string; }
 interface Scope { label: string; text: string; icon: string; }
+interface Spec { label: string; text: string; icon: string; priority?: boolean; }
+interface Knowledge { title: string; text: string; icon: string; }
 
 @Component({
   selector: 'app-home',
@@ -29,7 +31,7 @@ export class HomeComponent {
     { num: 1, title: 'Wybierz badanie', text: 'Przeglądaj katalog badań kału — pojedyncze testy oraz gotowe panele diagnostyczne.', icon: '🔎' },
     { num: 2, title: 'Pobierz materiał', text: 'Pobierz próbkę kału zgodnie z instrukcją i zabezpiecz ją do transportu.', icon: '🧴' },
     { num: 3, title: 'Dostarcz próbkę', text: 'Dostarcz materiał osobiście lub wyślij kurierem w warunkach chłodniczych.', icon: '📦' },
-    { num: 4, title: 'Odbierz wynik', text: 'Wynik przesyłamy pocztą lub e-mailem — zwykle w ciągu kilku dni roboczych.', icon: '📩' },
+    { num: 4, title: 'Odbierz wynik', text: 'Wynik wysyłamy pocztą elektroniczną lub przygotowujemy do odbioru stacjonarnego — zwykle w ciągu kilku dni roboczych.', icon: '📩' },
   ];
 
   readonly stats: Stat[] = [
@@ -65,6 +67,23 @@ export class HomeComponent {
       icon: '📋',
       text: 'Gotowe zestawy badań kału — od podstawowych paneli pediatrycznych po rozbudowane panele łączące diagnostykę pasożytniczą, mikrobiologiczną i markery zapalne, w korzystniejszej cenie niż badania osobno.',
     },
+  ];
+
+  readonly specializations: Spec[] = [
+    { label: 'Panele ginekologiczne', icon: '🌸', priority: true, text: 'Priorytetowy obszar naszego laboratorium — kompleksowa diagnostyka ginekologiczna we współpracy z lekarzami w powiecie.' },
+    { label: 'Diagnostyka prenatalna', icon: '🤰', text: 'Badania wspierające zdrowie matki i dziecka na każdym etapie ciąży.' },
+    { label: 'Zdrowie kobiet i mężczyzn', icon: '⚕️', text: 'Diagnostyka dopasowana do potrzeb kobiet i mężczyzn na każdym etapie życia.' },
+    { label: 'Diagnostyka hormonalna', icon: '⚗️', text: 'Ocena gospodarki hormonalnej — tarczyca, hormony płciowe i inne kluczowe parametry.' },
+    { label: 'Diagnostyka w autyzmie', icon: '🧩', text: 'Badania laboratoryjne wspierające diagnostykę i monitorowanie spektrum autyzmu.' },
+    { label: 'Trichologia', icon: '💇', text: 'Diagnostyka problemów skóry głowy i włosów we współpracy z trichologami.' },
+    { label: 'Gastrologia', icon: '🩺', text: 'Badania układu pokarmowego wspierające pracę gastrologów.' },
+  ];
+
+  readonly knowledge: Knowledge[] = [
+    { title: 'Autyzm w badaniach', icon: '🧩', text: 'Jakie badania laboratoryjne wspierają diagnostykę spektrum autyzmu i na co zwrócić uwagę.' },
+    { title: 'Ferrytyna w badaniach', icon: '🧪', text: 'Dlaczego ferrytyna to czuły wskaźnik zapasów żelaza i kiedy warto ją oznaczyć.' },
+    { title: 'Żelazo u kobiet', icon: '♀️', text: 'Niedobór żelaza to częsty problem u kobiet — sprawdź, jakie badania warto wykonać.' },
+    { title: 'Testosteron u mężczyzn', icon: '♂️', text: 'Rola testosteronu w zdrowiu mężczyzn i kiedy warto skontrolować jego poziom.' },
   ];
 
   search(): void {

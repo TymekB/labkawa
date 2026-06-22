@@ -5,8 +5,9 @@
       <span class="eyebrow">Niepubliczny Zakład Opieki Zdrowotnej</span>
       <h1>Badania laboratoryjne <span>bez skierowania</span> i bez kolejek</h1>
       <p class="hero__lead">
-        Wybierz badania z naszego katalogu, dostarcz materiał do laboratorium i odbierz
-        wyniki pocztą lub e-mailem. Profilaktyka zdrowia jeszcze nigdy nie była tak prosta.
+        Wykonasz u nas badania prywatnie oraz w ramach <strong>NFZ</strong>. Wybierz badania
+        z katalogu, dostarcz materiał do laboratorium, a wyniki odbierzesz pocztą elektroniczną
+        lub stacjonarnie. Profilaktyka zdrowia jeszcze nigdy nie była tak prosta.
       </p>
 
       <form class="hero__search" (ngSubmit)="search()" role="search">
@@ -37,9 +38,9 @@
 <section class="trust">
   <div class="container trust__inner">
     <div class="trust__item"><b>✓</b> Bez skierowania</div>
-    <div class="trust__item"><b>✓</b> Wyniki pocztą lub e-mailem</div>
+    <div class="trust__item"><b>✓</b> Badania na NFZ</div>
     <div class="trust__item"><b>✓</b> Akredytowane laboratorium</div>
-    <div class="trust__item"><b>✓</b> Pobranie w domu</div>
+    <div class="trust__item"><b>✓</b> Wyniki pocztą elektroniczną lub odbiór stacjonarny</div>
   </div>
 </section>
 
@@ -56,12 +57,33 @@
     <p class="intro__text">
       Nasze laboratorium to nowoczesna placówka medyczna, której nadrzędnym celem jest
       zapewnienie pacjentom rzetelnych wyników badań, wspierając ich zdrowie z pełnym
-      zaangażowaniem. Pod kierownictwem <strong>Marii Kawy</strong>, cenionej specjalistki
-      z wieloletnim doświadczeniem, oferujemy szeroką gamę usług diagnostycznych, opartych
+      zaangażowaniem. Pod kierownictwem <strong>Marii Kawy</strong> — specjalisty II stopnia
+      w zakresie analityki i mikrobiologii, z wieloletnim doświadczeniem — oferujemy szeroką gamę usług diagnostycznych, opartych
       na najnowocześniejszych technologiach. Dzięki innowacyjnemu sprzętowi oraz dbałości
       o najwyższe standardy, gwarantujemy szybkie i trafne diagnozy, które pomagają pacjentom
       na każdym etapie leczenia, zapewniając im spokój i wsparcie w drodze do zdrowia.
     </p>
+  </div>
+</section>
+
+<!-- SPECJALIZACJE -->
+<section class="section spec">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nasze specjalizacje</span>
+      <h2>Obszary, w których się specjalizujemy</h2>
+      <p>Współpracujemy z wieloma lekarzami w powiecie, wspierając diagnostykę w kluczowych dziedzinach medycyny.</p>
+    </div>
+    <div class="spec__grid">
+      @for (s of specializations; track s.label) {
+        <article class="card spec__card" [class.spec__card--priority]="s.priority">
+          @if (s.priority) { <span class="spec__badge">Priorytet</span> }
+          <span class="spec__icon" aria-hidden="true">{{ s.icon }}</span>
+          <h3 class="spec__label">{{ s.label }}</h3>
+          <p class="spec__text">{{ s.text }}</p>
+        </article>
+      }
+    </div>
   </div>
 </section>
 
@@ -71,7 +93,7 @@
     <div class="section-head">
       <span class="eyebrow">Nasza diagnostyka</span>
       <h2>Oferujemy szeroki zakres badań diagnostycznych</h2>
-      <p>Pięć obszarów diagnostyki laboratoryjnej — od analityki po endokrynologię.</p>
+      <p>Od diagnostyki pasożytniczej i mikrobiologicznej po ocenę mikroflory i markery stanu zapalnego.</p>
     </div>
     <div class="scopes__grid">
       @for (scope of scopes; track scope.label; let i = $index) {
@@ -153,6 +175,26 @@
         <div class="stat__label">{{ s.label }}</div>
       </div>
     }
+  </div>
+</section>
+
+<!-- CENTRUM WIEDZY -->
+<section class="section section--alt knowledge">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Kącik — centrum wiedzy</span>
+      <h2>Warto wiedzieć</h2>
+      <p>Krótkie przewodniki po badaniach, które najczęściej interesują naszych pacjentów.</p>
+    </div>
+    <div class="knowledge__grid">
+      @for (k of knowledge; track k.title) {
+        <article class="card knowledge__card">
+          <span class="knowledge__icon" aria-hidden="true">{{ k.icon }}</span>
+          <h3 class="knowledge__title">{{ k.title }}</h3>
+          <p class="knowledge__text">{{ k.text }}</p>
+        </article>
+      }
+    </div>
   </div>
 </section>
 

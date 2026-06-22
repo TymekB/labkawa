@@ -66,6 +66,31 @@
   .scope--wide { grid-column: auto; }
 }
 
+/* SPECJALIZACJE */
+.spec__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.spec__card { padding: 24px; position: relative; display: flex; flex-direction: column; gap: 6px; }
+.spec__card--priority { border: 2px solid var(--brand); }
+.spec__badge {
+  position: absolute; top: 16px; right: 16px;
+  background: var(--brand); color: #fff; font-size: .68rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .04em; padding: 4px 10px; border-radius: 999px;
+}
+.spec__icon {
+  width: 52px; height: 52px; display: grid; place-items: center; font-size: 1.6rem;
+  background: var(--brand-50); border-radius: 14px; margin-bottom: 6px;
+}
+.spec__label { margin: 0; font-size: 1.1rem; }
+.spec__text { margin: 0; color: var(--ink-soft); line-height: 1.6; font-size: .95rem; }
+
+/* CENTRUM WIEDZY */
+.knowledge__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.knowledge__card { padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+.knowledge__icon { font-size: 1.8rem; }
+.knowledge__title { margin: 0; font-size: 1.05rem; }
+.knowledge__text { margin: 0; color: var(--ink-soft); line-height: 1.6; font-size: .92rem; }
+@media (max-width: 920px) { .knowledge__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .knowledge__grid { grid-template-columns: 1fr; } }
+
 /* hero search: stack input + button on phones so nothing overflows */
 @media (max-width: 560px) {
   .hero__search {
