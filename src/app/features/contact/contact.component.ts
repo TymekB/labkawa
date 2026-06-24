@@ -31,21 +31,21 @@ export class ContactComponent {
     this.error.set(false);
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/labkawa@vp.pl', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
+          access_key: 'd59d982d-a89b-4353-b9d1-d590730df64f',
           name: this.model.name,
           email: this.model.email,
           message: this.model.message,
-          _cc: 'gorzyce@labkawa.pl',
-          _subject: 'Nowa wiadomość z formularza labkawa.pl',
-          _template: 'table',
-          _captcha: 'false',
+          subject: 'Nowa wiadomość z formularza labkawa.pl',
+          from_name: 'labkawa.pl',
         }),
       });
 
-      if (!response.ok) {
+      const data = await response.json();
+      if (!data.success) {
         throw new Error('send failed');
       }
 
