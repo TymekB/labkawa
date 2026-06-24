@@ -34,7 +34,7 @@ import { LogoComponent } from '../logo/logo.component';
           <a routerLink="/krew-utajona-w-kale">Krew utajona w kale</a>
           <a routerLink="/badania-mykologiczne">Badania mykologiczne</a>
           <a routerLink="/diagnostyka-jelit">Diagnostyka jelit</a>
-          <a routerLink="/instrukcja-pobrania-materialu">Instrukcja pobrania i&nbsp;wysyłki materiału</a>
+          <a routerLink="/instrukcja-pobrania-materialu">Jak pobrać i&nbsp;wysłać materiał</a>
         </div>
 
         <div class="ft__col">

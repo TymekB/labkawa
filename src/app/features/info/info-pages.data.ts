@@ -160,19 +160,19 @@ export const INFO_PAGES: InfoPage[] = [
         paragraphs: ['Aby uzyskać wiarygodny wynik badania, prosimy o dokładne zapoznanie się z poniższą instrukcją.'],
       },
       {
-        heading: 'Przygotowanie pojemników',
+        heading: '1. Przygotowanie pojemników',
         paragraphs: ['Należy zakupić w aptece dwa sterylne pojemniki na kał z zakrętką.'],
       },
       {
-        heading: 'Pobranie materiału',
+        heading: '2. Pobranie materiału',
         paragraphs: ['Próbkę kału należy pobrać do obu pojemników, wypełniając każdy do około połowy objętości. Materiał powinien zostać pobrany z ośmiu różnych miejsc próbki.'],
       },
       {
-        heading: 'Zabezpieczenie materiału',
+        heading: '3. Zabezpieczenie materiału',
         paragraphs: ['Po pobraniu materiału pojemniki należy szczelnie zamknąć i owinąć folią aluminiową.'],
       },
       {
-        heading: 'Dane pacjenta',
+        heading: '4. Dane pacjenta',
         paragraphs: ['Do przesyłki należy dołączyć kartkę zawierającą:'],
         bullets: [
           'imię i nazwisko pacjenta',
@@ -183,22 +183,22 @@ export const INFO_PAGES: InfoPage[] = [
         ],
       },
       {
-        heading: 'Przygotowanie do transportu',
+        heading: '5. Przygotowanie do transportu',
         paragraphs: [
           'W celu zachowania odpowiednich warunków transportu zalecamy użycie zamrożonego wkładu chłodzącego.',
           'Pojemniki z materiałem należy umieścić w szczelnym plastikowym pojemniku wraz z wkładem chłodzącym.',
         ],
       },
       {
-        heading: 'Dostarczenie materiału',
+        heading: '6. Dostarczenie materiału',
         paragraphs: [
           'Materiał można dostarczyć osobiście lub przesłać na adres: NZOZ LAB Maria Kawa, ul. Piłsudskiego 17, 39-432 Gorzyce.',
           'Przesyłkę należy nadać w godzinach porannych z informacją, że zawiera materiał biologiczny. Laboratorium odbiera przesyłki od poniedziałku do piątku w godzinach 8:00–14:00. Koszt przesyłki pokrywa pacjent.',
         ],
       },
       {
-        heading: 'Bezpłatny zestaw transportowy',
-        paragraphs: ['Po opłaceniu wybranych badań istnieje możliwość otrzymania bezpłatnego zestawu transportowego zawierającego:'],
+        heading: '7. Bezpłatny zestaw transportowy',
+        paragraphs: ['Po opłaceniu wybranych badań możesz otrzymać bezpłatny zestaw transportowy — zamów go pod adresem labkawa@vp.pl. Zestaw zawiera:'],
         bullets: [
           'pojemniki do pobrania materiału',
           'folię aluminiową',
@@ -207,22 +207,18 @@ export const INFO_PAGES: InfoPage[] = [
         ],
       },
       {
-        heading: 'Zamówienie zestawu',
-        paragraphs: ['W celu zamówienia zestawu prosimy o kontakt pod adresem: labkawa@vp.pl.'],
-      },
-      {
-        heading: 'Płatność za badania',
+        heading: '8. Płatność za badania',
         paragraphs: [
           'Opłatę za badania należy uiścić na rachunek: 84 1020 4913 0000 9202 0010 5353.',
           'Potwierdzenie wpłaty należy dołączyć do przesyłki.',
         ],
       },
       {
-        heading: 'Czas oczekiwania na wyniki',
+        heading: '9. Czas oczekiwania na wyniki',
         bullets: ['Badania w kierunku pasożytów: 4–5 dni roboczych', 'Posiew kału: około 9 dni roboczych'],
       },
       {
-        heading: 'Odbiór wyników',
+        heading: '10. Odbiór wyników',
         paragraphs: ['Wyniki przesyłamy drogą elektroniczną lub pocztową zgodnie z preferencjami pacjenta.'],
       },
       {
