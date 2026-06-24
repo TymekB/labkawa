@@ -12,7 +12,7 @@ import { LogoComponent } from '../logo/logo.component';
       <div class="container ft__top">
         <div class="ft__brand">
           <app-logo [light]="true" />
-          <p>Niepubliczny Zakład Opieki Zdrowotnej. Diagnostyka laboratoryjna na najwyższym poziomie od ponad 20 lat.</p>
+          <p>Diagnostyka laboratoryjna, której możesz zaufać. Od ponad 25 lat wspieramy zdrowie naszych pacjentów.</p>
           <div class="ft__social" aria-label="Media społecznościowe">
             <a href="https://www.instagram.com/laboratorium.kawa/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
             <a href="https://www.google.com/search?q=Niepubliczny+Zak%C5%82ad+Opieki+Zdrowotnej+Laboratorium+Diagnostyczne+%22LAB%22+Opinie&hl=pl&tbm=lcl&rldimm=6633722661145730379#lkt=LocalPoiReviews"
