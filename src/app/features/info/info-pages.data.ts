@@ -53,7 +53,7 @@ export const INFO_PAGES: InfoPage[] = [
       {
         heading: 'Jak się przygotować?',
         paragraphs: [
-          'Próbkę kału pobiera się do jałowego pojemnika z zakrętką, z ośmiu różnych miejsc, wypełniając pojemnik do połowy objętości. Materiał należy dostarczyć w warunkach chłodniczych. Szczegółową instrukcję znajdziesz na stronie „Jak pobrać próbkę kału”.',
+          'Próbkę kału pobiera się do jałowego pojemnika z zakrętką, z ośmiu różnych miejsc, wypełniając pojemnik do połowy objętości. Materiał należy dostarczyć w warunkach chłodniczych. Szczegółową instrukcję znajdziesz na stronie „Jak pobrać i wysłać materiał do badania”.',
         ],
       },
     ],
@@ -150,30 +150,85 @@ export const INFO_PAGES: InfoPage[] = [
     cta: { text: 'Zobacz badania dysbiozy', link: '/badania', query: { kategoria: 'dysbioza-jelitowa' } },
   },
   {
-    slug: 'jak-pobrac-probke-kalu',
-    title: 'Jak pobrać próbkę kału',
+    slug: 'instrukcja-pobrania-materialu',
+    title: 'Jak pobrać i wysłać materiał do badania?',
     icon: '🧴',
-    lead: 'Instrukcja przygotowania materiału do badania kału dla pacjenta — krok po kroku.',
+    lead: 'Przygotowaliśmy szczegółową instrukcję dotyczącą pobrania, zabezpieczenia oraz wysyłki materiału do naszego laboratorium. Przestrzeganie poniższych zaleceń pozwala uzyskać wiarygodne wyniki badań i sprawną realizację zlecenia.',
     sections: [
-      { heading: '1. Zakup pojemników', paragraphs: ['Zakup w aptece dwa pojemniki na kał, koniecznie z zakrętką.'] },
-      { heading: '2. Pobranie próbki', paragraphs: ['Pobierz próbkę kału, wypełniając pojemnik do połowy jego objętości. Materiał należy pobrać z ośmiu różnych miejsc.'] },
-      { heading: '3. Zabezpieczenie próbek', paragraphs: ['Pojemniki z pobranym materiałem owiń folią aluminiową.'] },
       {
-        heading: '4. Dane pacjenta',
-        paragraphs: ['Na osobnej kartce umieść następujące informacje:'],
-        bullets: ['Nazwisko i imię pacjenta', 'PESEL', 'Numer telefonu kontaktowego', 'Adres (opcjonalnie)', 'Informacja dotycząca faktury lub paragonu'],
+        heading: 'Jak prawidłowo pobrać próbkę kału do badania?',
+        paragraphs: ['Aby uzyskać wiarygodny wynik badania, prosimy o dokładne zapoznanie się z poniższą instrukcją.'],
       },
       {
-        heading: '5. Dostarczenie materiału',
-        paragraphs: [
-          'Materiał dostarcz osobiście lub wyślij na adres: NZOZ LAB Maria Kawa, ul. Piłsudskiego 17, 39-432 Gorzyce.',
-          'Przesyłkę nadaj kurierem w godzinach dopołudniowych, z zaznaczeniem, że zawiera materiał biologiczny. Laboratorium odbiera przesyłki od 8:00 do 14:00, najpóźniej do 16:00. Koszt przesyłki ponosi pacjent.',
+        heading: 'Przygotowanie pojemników',
+        paragraphs: ['Należy zakupić w aptece dwa sterylne pojemniki na kał z zakrętką.'],
+      },
+      {
+        heading: 'Pobranie materiału',
+        paragraphs: ['Próbkę kału należy pobrać do obu pojemników, wypełniając każdy do około połowy objętości. Materiał powinien zostać pobrany z ośmiu różnych miejsc próbki.'],
+      },
+      {
+        heading: 'Zabezpieczenie materiału',
+        paragraphs: ['Po pobraniu materiału pojemniki należy szczelnie zamknąć i owinąć folią aluminiową.'],
+      },
+      {
+        heading: 'Dane pacjenta',
+        paragraphs: ['Do przesyłki należy dołączyć kartkę zawierającą:'],
+        bullets: [
+          'imię i nazwisko pacjenta',
+          'numer PESEL',
+          'numer telefonu kontaktowego',
+          'adres do wysyłki wyników (opcjonalnie)',
+          'informację dotyczącą faktury lub paragonu',
         ],
       },
-      { heading: '6. Warunki transportu', paragraphs: ['Zaopatrz się w woreczek żelowy (dostępny w aptekach lub sklepach rehabilitacyjnych). Woreczek zamroź dzień wcześniej, a następnie zapakuj pojemniki z kałem do plastikowego pojemnika razem z zamrożonym wkładem.'] },
-      { heading: '7. Zestaw transportowy', paragraphs: ['Możemy bezpłatnie wysłać cały zestaw transportowy (pojemnik na kał, folię aluminiową, woreczek żelowy oraz plastikowy pojemnik) po uiszczeniu opłaty za wybrane badania. Zamówienie: prześlij dane adresowe na labkawa@vp.pl.'] },
-      { heading: '8. Czas oczekiwania na wyniki', bullets: ['Badanie w kierunku pasożytów: 4–5 dni roboczych', 'Posiew kału: około 9 dni roboczych'] },
-      { heading: '9. Otrzymanie wyników', paragraphs: ['Wyniki wysyłamy pocztą elektroniczną lub przygotowujemy do odbioru stacjonarnego. Prosimy o podpisanie zgody na przesłanie wyników drogą elektroniczną.'] },
+      {
+        heading: 'Przygotowanie do transportu',
+        paragraphs: [
+          'W celu zachowania odpowiednich warunków transportu zalecamy użycie zamrożonego wkładu chłodzącego.',
+          'Pojemniki z materiałem należy umieścić w szczelnym plastikowym pojemniku wraz z wkładem chłodzącym.',
+        ],
+      },
+      {
+        heading: 'Dostarczenie materiału',
+        paragraphs: [
+          'Materiał można dostarczyć osobiście lub przesłać na adres: NZOZ LAB Maria Kawa, ul. Piłsudskiego 17, 39-432 Gorzyce.',
+          'Przesyłkę należy nadać w godzinach porannych z informacją, że zawiera materiał biologiczny. Laboratorium odbiera przesyłki od poniedziałku do piątku w godzinach 8:00–14:00. Koszt przesyłki pokrywa pacjent.',
+        ],
+      },
+      {
+        heading: 'Bezpłatny zestaw transportowy',
+        paragraphs: ['Po opłaceniu wybranych badań istnieje możliwość otrzymania bezpłatnego zestawu transportowego zawierającego:'],
+        bullets: [
+          'pojemniki do pobrania materiału',
+          'folię aluminiową',
+          'wkład chłodzący',
+          'pojemnik transportowy',
+        ],
+      },
+      {
+        heading: 'Zamówienie zestawu',
+        paragraphs: ['W celu zamówienia zestawu prosimy o kontakt pod adresem: labkawa@vp.pl.'],
+      },
+      {
+        heading: 'Płatność za badania',
+        paragraphs: [
+          'Opłatę za badania należy uiścić na rachunek: 84 1020 4913 0000 9202 0010 5353.',
+          'Potwierdzenie wpłaty należy dołączyć do przesyłki.',
+        ],
+      },
+      {
+        heading: 'Czas oczekiwania na wyniki',
+        bullets: ['Badania w kierunku pasożytów: 4–5 dni roboczych', 'Posiew kału: około 9 dni roboczych'],
+      },
+      {
+        heading: 'Odbiór wyników',
+        paragraphs: ['Wyniki przesyłamy drogą elektroniczną lub pocztową zgodnie z preferencjami pacjenta.'],
+      },
+      {
+        heading: 'Ważne',
+        paragraphs: ['Przesyłki niezawierające kompletnych danych identyfikacyjnych i kontaktowych nie będą mogły zostać przyjęte do realizacji.'],
+      },
     ],
     cta: { text: 'Skontaktuj się z laboratorium', link: '/kontakt' },
   },

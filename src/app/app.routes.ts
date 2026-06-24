@@ -80,10 +80,10 @@ export const routes: Routes = [
     title: 'Diagnostyka jelit — LabKawa',
   },
   {
-    path: 'jak-pobrac-probke-kalu',
+    path: 'instrukcja-pobrania-materialu',
     loadComponent: () => import('./features/info/info-page.component').then((m) => m.InfoPageComponent),
-    data: { slug: 'jak-pobrac-probke-kalu' },
-    title: 'Jak pobrać próbkę kału — LabKawa',
+    data: { slug: 'instrukcja-pobrania-materialu' },
+    title: 'Jak pobrać i wysłać materiał do badania — LabKawa',
   },
   { path: '**', redirectTo: '' },
 ];

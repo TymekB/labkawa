@@ -9,8 +9,8 @@ import { NbspPipe } from '../../shared/pipes/nbsp.pipe';
 interface Step { num: number; title: string; text: string; icon: string; }
 interface Stat { value: string; label: string; text?: boolean; }
 interface Scope { label: string; text: string; icon: string; }
-interface Spec { label: string; text: string; icon: string; priority?: boolean; }
-interface Knowledge { title: string; text: string; icon: string; }
+interface Spec { label: string; text: string; icon: string; top?: boolean; }
+interface Knowledge { title: string; text: string; icon: string; link: string; }
 
 @Component({
   selector: 'app-home',
@@ -36,10 +36,10 @@ export class HomeComponent {
   ];
 
   readonly stats: Stat[] = [
-    { value: '1998', label: 'rok założenia laboratorium' },
-    { value: '39+', label: 'lat doświadczenia kierownika laboratorium' },
-    { value: 'Cała Polska', label: 'pacjenci z kraju i zagranicy', text: true },
-    { value: 'Kał i pasożyty', label: 'nasza specjalizacja', text: true },
+    { value: '1998', label: 'ponad 25 lat działalności' },
+    { value: '40 lat', label: 'doświadczenia w diagnostyce laboratoryjnej' },
+    { value: 'Pacjenci z całej Polski', label: 'zaufali nam pacjenci z kraju i zagranicy', text: true },
+    { value: 'Specjalistyczna diagnostyka jelit', label: 'pasożyty, mikrobiologia i badania kału', text: true },
   ];
 
   readonly about = {
@@ -47,7 +47,7 @@ export class HomeComponent {
       'Laboratorium Kawa działa nieprzerwanie od 1998 roku, zapewniając rzetelną diagnostykę laboratoryjną pacjentom z całej Polski. Przez ponad ćwierć wieku wykonaliśmy tysiące badań, zdobywając zaufanie zarówno pacjentów, jak i lekarzy różnych specjalizacji.',
       'Naszą szczególną renomę zbudowaliśmy w zakresie diagnostyki kału, badań pasożytologicznych oraz badań mikrobiologicznych. To właśnie dlatego próbki do badań trafiają do nas nie tylko z Tarnobrzega, Gorzyc i Podkarpacia, ale również z wielu regionów Polski, a także od pacjentów przebywających za granicą.',
     ],
-    bio: 'Za laboratorium stoi Maria Kawa, diagnosta laboratoryjny, absolwentka Collegium Medicum Uniwersytetu Jagiellońskiego, która ukończyła studia w 1986 roku. Wieloletnie doświadczenie zawodowe oraz nieustanne doskonalenie metod diagnostycznych pozwoliły stworzyć laboratorium cenione za dokładność, rzetelność i indywidualne podejście do każdego badania.',
+    bio: 'Laboratorium prowadzi mgr Maria Kawa — specjalista mikrobiologii oraz analityki medycznej, absolwentka Collegium Medicum Uniwersytetu Jagiellońskiego. Wieloletnie doświadczenie zawodowe oraz nieustanne doskonalenie metod diagnostycznych pozwoliły stworzyć miejsce cenione za dokładność, rzetelność i indywidualne podejście do każdego pacjenta.',
     reasons: [
       'Wieloletnie doświadczenie w diagnostyce laboratoryjnej',
       'Specjalizacja w badaniach kału i diagnostyce pasożytów',
@@ -55,52 +55,53 @@ export class HomeComponent {
       'Bezpośredni nadzór wykwalifikowanego diagnosty laboratoryjnego',
       'Zaufanie budowane od 1998 roku',
     ],
-    mission: 'Wierzymy, że dobra diagnostyka jest fundamentem skutecznego leczenia. Dlatego od ponad 25 lat dostarczamy pacjentom i lekarzom wiarygodne wyniki badań, pomagając w podejmowaniu właściwych decyzji diagnostycznych i terapeutycznych.',
+    mission: 'W naszej pracy łączymy wiedzę, nowoczesną diagnostykę oraz najwyższe standardy jakości, aby dostarczać wyniki, którym można zaufać.',
   };
 
   readonly scopes: Scope[] = [
     {
       label: 'Badania parazytologiczne',
       icon: '🪱',
-      text: 'Wykrywanie pasożytów jelitowych i ich jaj w kale metodą BIO-REPAIR — glisty, owsik, tasiemiec, włosogłówka, węgorek czy lamblia jelitowa. Pomagamy w diagnostyce i monitorowaniu zakażeń pasożytniczych u dzieci i dorosłych.',
+      text: 'Diagnostyka pasożytów przewodu pokarmowego, w tym glisty ludzkiej, owsika, tasiemców, włosogłówki, węgorka jelitowego oraz lamblii. Badania pomagają wykrywać i monitorować zakażenia pasożytnicze u dzieci i dorosłych.',
     },
     {
       label: 'Badania mikrobiologiczne',
       icon: '🦠',
-      text: 'Posiewy kału w kierunku drożdżaków Candida, bakterii i pleśni oraz wykrywanie patogenów takich jak Helicobacter pylori, Clostridium difficile, adeno-, rota- i norowirusy.',
+      text: 'Posiewy oraz badania w kierunku bakterii, grzybów i wirusów odpowiedzialnych za infekcje przewodu pokarmowego, w tym Helicobacter pylori, Clostridioides difficile, rotawirusów, norowirusów i adenowirusów.',
     },
     {
-      label: 'Markery i stan zapalny',
+      label: 'Markery stanu zapalnego jelit',
       icon: '🔬',
-      text: 'Ocena stanu zapalnego i funkcji jelit: kalprotektyna i laktoferyna w kale, krew utajona (FOB) oraz pH kału z analizą resztek pokarmowych.',
+      text: 'Badania wspierające diagnostykę chorób zapalnych jelit oraz ocenę ich aktywności. Obejmują między innymi kalprotektynę, laktoferynę, krew utajoną w kale (FOB) oraz ocenę pH kału.',
     },
     {
-      label: 'Dysbioza i mikroflora jelit',
+      label: 'Ocena mikroflory jelitowej i dysbiozy',
       icon: '🧬',
-      text: 'Ilościowa ocena mikroflory jelitowej oraz markery szczelności i pracy jelit: zonulina, alfa-1-antytrypsyna, elastaza trzustkowa, białko EPX i inne.',
+      text: 'Kompleksowa analiza mikrobioty jelitowej oraz parametrów związanych z funkcjonowaniem bariery jelitowej, trawieniem i wchłanianiem składników odżywczych.',
     },
     {
       label: 'Panele diagnostyczne',
       icon: '📋',
-      text: 'Gotowe zestawy badań kału — od podstawowych paneli pediatrycznych po rozbudowane panele łączące diagnostykę pasożytniczą, mikrobiologiczną i markery zapalne, w korzystniejszej cenie niż badania osobno.',
+      text: 'Starannie opracowane pakiety badań pozwalające na kompleksową ocenę zdrowia przewodu pokarmowego. To wygodne i korzystne cenowo rozwiązanie dla osób wymagających szerszej diagnostyki.',
     },
   ];
 
   readonly specializations: Spec[] = [
-    { label: 'Panele ginekologiczne', icon: '🌸', priority: true, text: 'Priorytetowy obszar naszego laboratorium — kompleksowa diagnostyka ginekologiczna we współpracy z lekarzami w powiecie.' },
+    { label: 'Panele ginekologiczne', icon: '🌸', top: true, text: 'Kompleksowa diagnostyka ginekologiczna wykonywana we współpracy z lekarzami specjalistami.' },
+    { label: 'Diagnostyka przewodu pokarmowego i badania kału', icon: '🧫', top: true, text: 'Zaawansowane badania mikrobiologiczne, parazytologiczne oraz diagnostyka schorzeń układu pokarmowego.' },
+    { label: 'Mikrobiologia i diagnostyka zakażeń', icon: '🦠', top: true, text: 'Posiewy, identyfikacja drobnoustrojów oraz ocena skuteczności leczenia infekcji.' },
     { label: 'Diagnostyka prenatalna', icon: '👶', text: 'Badania wspierające zdrowie matki i dziecka na każdym etapie ciąży.' },
-    { label: 'Zdrowie kobiet i mężczyzn', icon: '⚕️', text: 'Diagnostyka dopasowana do potrzeb kobiet i mężczyzn na każdym etapie życia.' },
-    { label: 'Diagnostyka hormonalna', icon: '⚗️', text: 'Ocena gospodarki hormonalnej — tarczyca, hormony płciowe i inne kluczowe parametry.' },
-    { label: 'Diagnostyka w autyzmie', icon: '🧩', text: 'Badania laboratoryjne wspierające diagnostykę i monitorowanie spektrum autyzmu.' },
-    { label: 'Trychologia', icon: '✂️', text: 'Diagnostyka problemów skóry głowy i włosów we współpracy z trychologami.' },
-    { label: 'Gastrologia', icon: '🩺', text: 'Badania układu pokarmowego wspierające pracę gastrologów.' },
+    { label: 'Diagnostyka hormonalna', icon: '⚗️', text: 'Ocena gospodarki hormonalnej, tarczycy oraz hormonów płciowych.' },
+    { label: 'Gastrologia', icon: '🩺', text: 'Diagnostyka chorób układu pokarmowego wspierająca lekarzy gastroenterologów.' },
+    { label: 'Trychologia', icon: '✂️', text: 'Badania pomocne w diagnostyce problemów skóry głowy oraz wypadania włosów.' },
+    { label: 'Profilaktyka i diagnostyka ogólna', icon: '❤️', text: 'Badania kontrolne, pakiety profilaktyczne oraz monitorowanie stanu zdrowia.' },
   ];
 
   readonly knowledge: Knowledge[] = [
-    { title: 'Autyzm w badaniach', icon: '🧩', text: 'Jakie badania laboratoryjne wspierają diagnostykę spektrum autyzmu i na co zwrócić uwagę.' },
-    { title: 'Ferrytyna w badaniach', icon: '🧪', text: 'Dlaczego ferrytyna to czuły wskaźnik zapasów żelaza i kiedy warto ją oznaczyć.' },
-    { title: 'Żelazo u kobiet', icon: '♀️', text: 'Niedobór żelaza to częsty problem u kobiet — sprawdź, jakie badania warto wykonać.' },
-    { title: 'Testosteron u mężczyzn', icon: '♂️', text: 'Rola testosteronu w zdrowiu mężczyzn i kiedy warto skontrolować jego poziom.' },
+    { title: 'Badanie kału na pasożyty — kiedy warto je wykonać?', icon: '📖', text: 'Co może wykazać badanie kału na pasożyty i jakie objawy powinny skłonić do diagnostyki.', link: '/badanie-kalu-na-pasozyty' },
+    { title: 'Krew utajona w kale — co oznacza dodatni wynik?', icon: '📖', text: 'Dlaczego krew utajona jest ważnym badaniem przesiewowym i jak interpretować wynik.', link: '/krew-utajona-w-kale' },
+    { title: 'Badania mykologiczne — grzyby i drożdżaki w jelitach', icon: '📖', text: 'Jak wykryć grzyby i drożdżaki w przewodzie pokarmowym i kiedy warto wykonać posiew.', link: '/badania-mykologiczne' },
+    { title: 'Diagnostyka jelit — bóle brzucha, biegunki i wzdęcia', icon: '📖', text: 'Jakie badania wykonać przy przewlekłych dolegliwościach trawiennych i dysbiozie.', link: '/diagnostyka-jelit' },
   ];
 
   search(): void {

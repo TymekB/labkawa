@@ -46,7 +46,7 @@
 
       <div class="hdr__dropdown" [class.is-open]="articlesOpen()">
         <button type="button" class="hdr__dropdown-toggle" (click)="toggleArticles()" [attr.aria-expanded]="articlesOpen()">
-          Artykuły <span class="hdr__caret" aria-hidden="true"></span>
+          Baza wiedzy <span class="hdr__caret" aria-hidden="true"></span>
         </button>
         <div class="hdr__dropdown-menu">
           @for (a of articles; track a.link) {

@@ -3,11 +3,11 @@
   <div class="container hero__inner">
     <div class="hero__content">
       <span class="eyebrow">Niepubliczny Zakład Opieki Zdrowotnej</span>
-      <h1>Badania laboratoryjne <span>bez i&nbsp;ze skierowaniem</span></h1>
+      <h1>Nowoczesna Diagnostyka Laboratoryjna <span>Twoje zdrowie zaczyna się od diagnostyki</span></h1>
       <p class="hero__lead">
-        Wykonasz u&nbsp;nas badania prywatnie oraz w&nbsp;ramach <strong>NFZ</strong>. Wybierz badania
-        z&nbsp;katalogu, dostarcz materiał do laboratorium, a&nbsp;wyniki odbierzesz pocztą elektroniczną
-        lub stacjonarnie. Profilaktyka zdrowia jeszcze nigdy nie była tak prosta.
+        Wykonaj badania laboratoryjne prywatnie lub w&nbsp;ramach <strong>NFZ</strong>. Zapewniamy sprawną
+        obsługę, szeroki zakres badań oraz wygodny dostęp do wyników przez internet. Szybko, bezpiecznie
+        i&nbsp;bez niepotrzebnego oczekiwania.
       </p>
 
       <form class="hero__search" (ngSubmit)="search()" role="search">
@@ -55,7 +55,7 @@
     <h3 class="intro__sub">Ponad 25 lat doświadczenia</h3>
     <figure class="intro__person">
       <img src="maria-kawa.png" width="480" height="480" alt="Maria Kawa — diagnosta laboratoryjny" />
-      <figcaption><strong>Maria Kawa</strong><span>diagnosta laboratoryjny</span></figcaption>
+      <figcaption><strong>mgr Maria Kawa</strong><span>specjalista mikrobiologii i&nbsp;analityki medycznej</span></figcaption>
     </figure>
     <p class="intro__text">{{ about.bio | nbsp }}</p>
 
@@ -81,8 +81,8 @@
     </div>
     <div class="spec__grid">
       @for (s of specializations; track s.label) {
-        <article class="card spec__card" [class.spec__card--priority]="s.priority">
-          @if (s.priority) { <span class="spec__badge">Priorytet</span> }
+        <article class="card spec__card" [class.spec__card--priority]="s.top">
+          @if (s.top) { <span class="spec__badge">TOP 3</span> }
           <span class="spec__icon" aria-hidden="true">{{ s.icon }}</span>
           <h3 class="spec__label">{{ s.label | nbsp }}</h3>
           <p class="spec__text">{{ s.text | nbsp }}</p>
@@ -96,9 +96,9 @@
 <section class="section section--alt scopes">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Nasza diagnostyka</span>
-      <h2>Oferujemy szeroki zakres badań diagnostycznych</h2>
-      <p>Od diagnostyki pasożytniczej i&nbsp;mikrobiologicznej po ocenę mikroflory i&nbsp;markery stanu zapalnego.</p>
+      <span class="eyebrow">Nasza specjalizacja</span>
+      <h2>Eksperci w&nbsp;diagnostyce przewodu pokarmowego</h2>
+      <p>Specjalizujemy się w&nbsp;diagnostyce jelit i&nbsp;układu pokarmowego, oferując szeroki zakres badań wspierających rozpoznawanie infekcji, stanów zapalnych, zaburzeń mikroflory jelitowej oraz chorób przewodu pokarmowego.</p>
     </div>
     <div class="scopes__grid">
       @for (scope of scopes; track scope.label; let i = $index) {
@@ -187,18 +187,21 @@
 <section class="section section--alt knowledge">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Centrum wiedzy</span>
+      <span class="eyebrow">Baza wiedzy</span>
       <h2>Warto wiedzieć</h2>
-      <p>Krótkie przewodniki po badaniach, które najczęściej interesują naszych pacjentów.</p>
+      <p>Najważniejsze informacje dotyczące diagnostyki laboratoryjnej, zdrowia jelit oraz przygotowania do badań.</p>
     </div>
     <div class="knowledge__grid">
       @for (k of knowledge; track k.title) {
-        <article class="card knowledge__card">
+        <a class="card knowledge__card" [routerLink]="k.link">
           <span class="knowledge__icon" aria-hidden="true">{{ k.icon }}</span>
           <h3 class="knowledge__title">{{ k.title | nbsp }}</h3>
           <p class="knowledge__text">{{ k.text | nbsp }}</p>
-        </article>
+        </a>
       }
+    </div>
+    <div class="text-center" style="margin-top: 36px;">
+      <a routerLink="/dla-pacjenta" class="btn btn--ghost">Dla pacjenta</a>
     </div>
   </div>
 </section>

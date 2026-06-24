@@ -77,14 +77,8 @@ export class CatalogService {
   ];
 
   private readonly _points: CollectionPoint[] = [
-    { id: 'pp1', name: 'LabKawa Centrum', city: 'Kraków', address: 'ul. Floriańska 12', phone: '12 345 67 89', hours: 'Pn–Pt 7:00–18:00, Sob 8:00–12:00', openSaturday: true, homeService: true },
-    { id: 'pp2', name: 'LabKawa Podgórze', city: 'Kraków', address: 'ul. Kalwaryjska 44', phone: '12 345 67 90', hours: 'Pn–Pt 7:00–15:00', openSaturday: false, homeService: true },
-    { id: 'pp3', name: 'LabKawa Mokotów', city: 'Warszawa', address: 'ul. Puławska 120', phone: '22 100 20 30', hours: 'Pn–Pt 6:30–19:00, Sob 8:00–13:00', openSaturday: true, homeService: true },
-    { id: 'pp4', name: 'LabKawa Wola', city: 'Warszawa', address: 'al. Solidarności 80', phone: '22 100 20 31', hours: 'Pn–Pt 7:00–17:00', openSaturday: false, homeService: false },
-    { id: 'pp5', name: 'LabKawa Stare Miasto', city: 'Wrocław', address: 'ul. Świdnicka 19', phone: '71 200 30 40', hours: 'Pn–Pt 7:00–18:00, Sob 8:00–12:00', openSaturday: true, homeService: true },
-    { id: 'pp6', name: 'LabKawa Śródmieście', city: 'Poznań', address: 'ul. Półwiejska 7', phone: '61 300 40 50', hours: 'Pn–Pt 7:00–16:00', openSaturday: false, homeService: true },
-    { id: 'pp7', name: 'LabKawa Bałuty', city: 'Łódź', address: 'ul. Zgierska 60', phone: '42 400 50 60', hours: 'Pn–Pt 7:00–15:00, Sob 8:00–11:00', openSaturday: true, homeService: false },
-    { id: 'pp8', name: 'LabKawa Przymorze', city: 'Gdańsk', address: 'al. Grunwaldzka 200', phone: '58 500 60 70', hours: 'Pn–Pt 6:30–18:00', openSaturday: false, homeService: true },
+    { id: 'pp1', name: 'Laboratorium Diagnostyczne „LAB”', city: 'Gorzyce', address: 'ul. Piłsudskiego 17, 39-432 Gorzyce', phone: '+48 15 836 28 88', hours: 'Pn–Pt 6:30–17:00', openSaturday: false, homeService: false },
+    { id: 'pp2', name: 'Punkt pobrań — NZOZ ZiG-Med', city: 'Tarnobrzeg', address: 'ul. Henryka Sienkiewicza 64, 39-400 Tarnobrzeg', phone: '+48 15 823 24 03', hours: 'Pobrania: Pn i Czw 7:00–9:00', openSaturday: false, homeService: false },
   ];
 
   // ---- public reactive accessors ----

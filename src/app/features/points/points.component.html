@@ -1,59 +1,29 @@
 <section class="page-hero">
   <div class="container">
     <nav class="crumbs"><a routerLink="/">Strona główna</a> <span>/</span> Punkty pobrań</nav>
-    <h1>Znajdź punkt pobrań</h1>
-    <p>Ponad 120 punktów pobrań w całej Polsce. Wybierz miasto i sprawdź godziny otwarcia.</p>
+    <h1>Nasze punkty pobrań</h1>
+    <p>Zapraszamy do naszych punktów pobrań, gdzie wykonasz badania laboratoryjne prywatnie oraz w&nbsp;ramach NFZ. Zapewniamy profesjonalną obsługę, komfortowe warunki oraz wygodny dostęp do wyników badań.</p>
   </div>
 </section>
 
-<section class="section section--tight">
+<section class="section">
   <div class="container">
-    <div class="card filters-bar">
-      <div class="filters-bar__field">
-        <label for="city">Miasto</label>
-        <select id="city" class="field" [ngModel]="city()" (ngModelChange)="city.set($event)">
-          <option value="">Wszystkie miasta</option>
-          @for (c of cities(); track c) { <option [value]="c">{{ c }}</option> }
-        </select>
-      </div>
-      <label class="check">
-        <input type="checkbox" [ngModel]="onlyHome()" (ngModelChange)="onlyHome.set($event)" />
-        <span>🏠 Pobranie w domu</span>
-      </label>
-      <label class="check">
-        <input type="checkbox" [ngModel]="onlySaturday()" (ngModelChange)="onlySaturday.set($event)" />
-        <span>📅 Otwarte w soboty</span>
-      </label>
-      <button type="button" class="btn btn--ghost btn--sm" (click)="reset()">Wyczyść</button>
+    <div class="grid grid--2">
+      @for (p of points(); track p.id) {
+        <article class="card point">
+          <div class="point__city">📍 {{ p.city }}</div>
+          <h3 class="point__name">{{ p.name }}</h3>
+          <p class="point__addr">{{ p.address }}</p>
+          <ul class="point__meta">
+            <li>🕗 {{ p.hours }}</li>
+            <li>📞 <a href="tel:{{ p.phone }}">{{ p.phone }}</a></li>
+          </ul>
+        </article>
+      }
     </div>
 
-    <p class="results-count">Znaleziono <b>{{ results().length }}</b> punktów</p>
-
-    @if (results().length > 0) {
-      <div class="grid grid--3">
-        @for (p of results(); track p.id) {
-          <article class="card point">
-            <div class="point__city">📍 {{ p.city }}</div>
-            <h3 class="point__name">{{ p.name }}</h3>
-            <p class="point__addr">{{ p.address }}</p>
-            <ul class="point__meta">
-              <li>🕗 {{ p.hours }}</li>
-              <li>📞 <a href="tel:{{ p.phone }}">{{ p.phone }}</a></li>
-            </ul>
-            <div class="point__tags">
-              @if (p.homeService) { <span class="badge badge--new">Pobranie w domu</span> }
-              @if (p.openSaturday) { <span class="badge">Soboty</span> }
-            </div>
-          </article>
-        }
-      </div>
-    } @else {
-      <div class="empty card">
-        <span class="empty__icon">📍</span>
-        <h3>Brak punktów dla wybranych kryteriów</h3>
-        <p>Zmień filtry, aby zobaczyć dostępne punkty pobrań.</p>
-        <button type="button" class="btn btn--ghost" (click)="reset()">Wyczyść filtry</button>
-      </div>
-    }
+    <p class="text-muted" style="margin-top: 28px; text-align: center;">
+      W&nbsp;obu punktach wykonasz badania laboratoryjne dla dzieci i&nbsp;dorosłych oraz uzyskasz pomoc w&nbsp;doborze odpowiedniej diagnostyki.
+    </p>
   </div>
 </section>
