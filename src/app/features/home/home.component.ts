@@ -87,9 +87,9 @@ export class HomeComponent {
   ];
 
   readonly specializations: Spec[] = [
-    { label: 'Panele ginekologiczne', icon: '🌸', top: true, text: 'Kompleksowa diagnostyka ginekologiczna wykonywana we współpracy z lekarzami specjalistami.' },
     { label: 'Diagnostyka przewodu pokarmowego i badania kału', icon: '🧫', top: true, text: 'Zaawansowane badania mikrobiologiczne, parazytologiczne oraz diagnostyka schorzeń układu pokarmowego.' },
     { label: 'Mikrobiologia i diagnostyka zakażeń', icon: '🦠', top: true, text: 'Posiewy, identyfikacja drobnoustrojów oraz ocena skuteczności leczenia infekcji.' },
+    { label: 'Panele ginekologiczne', icon: '🌸', top: true, text: 'Kompleksowa diagnostyka ginekologiczna wykonywana we współpracy z lekarzami specjalistami.' },
     { label: 'Diagnostyka prenatalna', icon: '👶', text: 'Badania wspierające zdrowie matki i dziecka na każdym etapie ciąży.' },
     { label: 'Diagnostyka hormonalna', icon: '⚗️', text: 'Ocena gospodarki hormonalnej, tarczycy oraz hormonów płciowych.' },
     { label: 'Gastrologia', icon: '🩺', text: 'Diagnostyka chorób układu pokarmowego wspierająca lekarzy gastroenterologów.' },

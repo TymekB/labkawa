@@ -77,8 +77,8 @@ export class CatalogService {
   ];
 
   private readonly _points: CollectionPoint[] = [
-    { id: 'pp1', name: 'Laboratorium Diagnostyczne „LAB”', city: 'Gorzyce', address: 'ul. Piłsudskiego 17, 39-432 Gorzyce', phone: '+48 15 836 28 88', hours: 'Pn–Pt 6:30–17:00', openSaturday: false, homeService: false },
-    { id: 'pp2', name: 'Punkt pobrań — NZOZ ZiG-Med', city: 'Tarnobrzeg', address: 'ul. Henryka Sienkiewicza 64, 39-400 Tarnobrzeg', phone: '+48 15 823 24 03', hours: 'Pobrania: Pn i Czw 7:00–9:00', openSaturday: false, homeService: false },
+    { id: 'pp1', name: 'NZOZ Laboratorium Diagnostyczne „LAB”', city: 'Gorzyce', address: 'ul. Piłsudskiego 17, 39-432 Gorzyce', phone: '+48 15 836 28 88', hours: 'Pn–Pt 6:30–17:00', description: 'Główna siedziba laboratorium. W tym miejscu wykonywane są badania laboratoryjne oraz przyjmowany jest materiał do badań z całej Polski.', openSaturday: false, homeService: false },
+    { id: 'pp2', name: 'NZOZ ZiG-Med', city: 'Tarnobrzeg', address: 'ul. Henryka Sienkiewicza 64, 39-400 Tarnobrzeg', phone: '+48 15 823 24 03', hours: 'Pobrania: Pn i Czw 7:00–9:00', description: 'Punkt pobrań materiału do badań.', openSaturday: false, homeService: false },
   ];
 
   // ---- public reactive accessors ----

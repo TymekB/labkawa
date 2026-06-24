@@ -18,12 +18,15 @@
             <li>🕗 {{ p.hours }}</li>
             <li>📞 <a href="tel:{{ p.phone }}">{{ p.phone }}</a></li>
           </ul>
+          @if (p.description) {
+            <p class="point__desc">{{ p.description }}</p>
+          }
         </article>
       }
     </div>
 
     <p class="text-muted" style="margin-top: 28px; text-align: center;">
-      W&nbsp;obu punktach wykonasz badania laboratoryjne dla dzieci i&nbsp;dorosłych oraz uzyskasz pomoc w&nbsp;doborze odpowiedniej diagnostyki.
+      Materiał do badań możesz dostarczyć bezpośrednio do laboratorium w&nbsp;Gorzycach lub pozostawić w&nbsp;punkcie pobrań w&nbsp;Tarnobrzegu. Oferujemy badania dla dzieci i&nbsp;dorosłych oraz wsparcie w&nbsp;doborze odpowiedniej diagnostyki.
     </p>
   </div>
 </section>

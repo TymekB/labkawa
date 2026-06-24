@@ -42,6 +42,7 @@ export interface CollectionPoint {
   address: string;
   phone: string;
   hours: string;
+  description?: string;
   openSaturday: boolean;
   homeService: boolean;
 }
