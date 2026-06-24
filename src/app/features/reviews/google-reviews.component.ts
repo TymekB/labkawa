@@ -20,7 +20,7 @@ const REVIEW_COUNT = 28;
           <p>Ocena {{ rating }} / 5 na podstawie {{ count }} opinii w&nbsp;Google.</p>
         </div>
 
-        <div [attr.data-type]="'carousel'" class="wiser_review_carousel" [attr.data-id]="widgetId"></div>
+        <div data-type="carousel" class="wiser_review_carousel" data-id="6a3babda68fbcf2d5f94340a"></div>
 
         <div class="text-center" style="margin-top: 28px;">
           <a class="btn btn--ghost" [href]="reviewsUrl" target="_blank" rel="noopener">
@@ -32,7 +32,6 @@ const REVIEW_COUNT = 28;
   `,
 })
 export class GoogleReviewsComponent implements AfterViewInit {
-  readonly widgetId = WISER_WIDGET_ID;
   readonly reviewsUrl = GOOGLE_REVIEWS_URL;
   readonly rating = RATING;
   readonly count = REVIEW_COUNT;
