@@ -32,7 +32,6 @@ export class HeaderComponent {
     { label: 'Krew utajona w kale', link: '/krew-utajona-w-kale' },
     { label: 'Badania mykologiczne', link: '/badania-mykologiczne' },
     { label: 'Diagnostyka jelit', link: '/diagnostyka-jelit' },
-    { label: 'Jak pobrać i wysłać materiał', link: '/instrukcja-pobrania-materialu' },
   ];
 
   toggleMobile(): void {

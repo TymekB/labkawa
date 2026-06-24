@@ -26,6 +26,7 @@ import { LogoComponent } from '../logo/logo.component';
           <a routerLink="/pakiety">Pakiety badań</a>
           <a routerLink="/punkty-pobran">Punkty pobrań</a>
           <a routerLink="/dla-pacjenta">Jak się przygotować</a>
+          <a routerLink="/instrukcja-pobrania-materialu">Jak pobrać i&nbsp;wysłać materiał</a>
         </div>
 
         <div class="ft__col">
@@ -34,7 +35,6 @@ import { LogoComponent } from '../logo/logo.component';
           <a routerLink="/krew-utajona-w-kale">Krew utajona w kale</a>
           <a routerLink="/badania-mykologiczne">Badania mykologiczne</a>
           <a routerLink="/diagnostyka-jelit">Diagnostyka jelit</a>
-          <a routerLink="/instrukcja-pobrania-materialu">Jak pobrać i&nbsp;wysłać materiał</a>
         </div>
 
         <div class="ft__col">
