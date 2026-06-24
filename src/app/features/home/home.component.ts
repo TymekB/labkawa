@@ -9,7 +9,7 @@ import { NbspPipe } from '../../shared/pipes/nbsp.pipe';
 interface Step { num: number; title: string; text: string; icon: string; }
 interface Stat { value: string; label: string; text?: boolean; }
 interface Scope { label: string; text: string; icon: string; }
-interface Spec { label: string; text: string; icon: string; top?: boolean; }
+interface Spec { label: string; text: string; icon: string; rank?: number; }
 interface Knowledge { title: string; text: string; icon: string; link: string; }
 
 @Component({
@@ -87,9 +87,9 @@ export class HomeComponent {
   ];
 
   readonly specializations: Spec[] = [
-    { label: 'Diagnostyka przewodu pokarmowego i badania kału', icon: '🧫', top: true, text: 'Zaawansowane badania mikrobiologiczne, parazytologiczne oraz diagnostyka schorzeń układu pokarmowego.' },
-    { label: 'Mikrobiologia i diagnostyka zakażeń', icon: '🦠', top: true, text: 'Posiewy, identyfikacja drobnoustrojów oraz ocena skuteczności leczenia infekcji.' },
-    { label: 'Panele ginekologiczne', icon: '🌸', top: true, text: 'Kompleksowa diagnostyka ginekologiczna wykonywana we współpracy z lekarzami specjalistami.' },
+    { label: 'Diagnostyka przewodu pokarmowego i badania kału', icon: '🧫', rank: 1, text: 'Zaawansowane badania mikrobiologiczne, parazytologiczne oraz diagnostyka schorzeń układu pokarmowego.' },
+    { label: 'Mikrobiologia i diagnostyka zakażeń', icon: '🦠', rank: 2, text: 'Posiewy, identyfikacja drobnoustrojów oraz ocena skuteczności leczenia infekcji.' },
+    { label: 'Panele ginekologiczne', icon: '🌸', rank: 3, text: 'Kompleksowa diagnostyka ginekologiczna wykonywana we współpracy z lekarzami specjalistami.' },
     { label: 'Diagnostyka prenatalna', icon: '👶', text: 'Badania wspierające zdrowie matki i dziecka na każdym etapie ciąży.' },
     { label: 'Diagnostyka hormonalna', icon: '⚗️', text: 'Ocena gospodarki hormonalnej, tarczycy oraz hormonów płciowych.' },
     { label: 'Gastrologia', icon: '🩺', text: 'Diagnostyka chorób układu pokarmowego wspierająca lekarzy gastroenterologów.' },

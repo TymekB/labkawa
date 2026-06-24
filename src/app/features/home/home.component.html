@@ -81,8 +81,8 @@
     </div>
     <div class="spec__grid">
       @for (s of specializations; track s.label) {
-        <article class="card spec__card" [class.spec__card--priority]="s.top">
-          @if (s.top) { <span class="spec__badge">TOP 3</span> }
+        <article class="card spec__card" [class.spec__card--priority]="s.rank">
+          @if (s.rank) { <span class="spec__badge">TOP {{ s.rank }}</span> }
           <span class="spec__icon" aria-hidden="true">{{ s.icon }}</span>
           <h3 class="spec__label">{{ s.label | nbsp }}</h3>
           <p class="spec__text">{{ s.text | nbsp }}</p>
