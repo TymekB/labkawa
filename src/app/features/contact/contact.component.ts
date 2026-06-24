@@ -12,6 +12,8 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class ContactComponent {
   readonly sent = signal(false);
+  readonly sending = signal(false);
+  readonly error = signal(false);
 
   readonly model = {
     name: '',
@@ -19,12 +21,40 @@ export class ContactComponent {
     message: '',
   };
 
-  submit(form: NgForm): void {
+  async submit(form: NgForm): Promise<void> {
     if (form.invalid) {
       Object.values(form.controls).forEach((c) => c.markAsTouched());
       return;
     }
-    this.sent.set(true);
-    form.resetForm();
+
+    this.sending.set(true);
+    this.error.set(false);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/labkawa@vp.pl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: this.model.name,
+          email: this.model.email,
+          message: this.model.message,
+          _cc: 'gorzyce@labkawa.pl',
+          _subject: 'Nowa wiadomość z formularza labkawa.pl',
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('send failed');
+      }
+
+      this.sent.set(true);
+      form.resetForm();
+    } catch {
+      this.error.set(true);
+    } finally {
+      this.sending.set(false);
+    }
   }
 }

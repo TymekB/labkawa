@@ -73,7 +73,13 @@
             }
           </div>
 
-          <button type="submit" class="btn btn--primary">Wyślij wiadomość</button>
+          @if (error()) {
+            <p class="err" style="margin-bottom: 12px;">Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na labkawa&#64;vp.pl.</p>
+          }
+
+          <button type="submit" class="btn btn--primary" [disabled]="sending()">
+            {{ sending() ? 'Wysyłanie…' : 'Wyślij wiadomość' }}
+          </button>
         </form>
       }
     </div>
