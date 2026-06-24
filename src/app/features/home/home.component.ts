@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CatalogService } from '../../core/services/catalog.service';
 import { TestCardComponent } from '../../shared/components/test-card/test-card.component';
 import { PackageCardComponent } from '../../shared/components/package-card/package-card.component';
+import { GoogleReviewsComponent } from '../reviews/google-reviews.component';
 import { NbspPipe } from '../../shared/pipes/nbsp.pipe';
 
 interface Step { num: number; title: string; text: string; icon: string; }
@@ -15,7 +16,7 @@ interface Knowledge { title: string; text: string; icon: string; link: string; }
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, FormsModule, TestCardComponent, PackageCardComponent, NbspPipe],
+  imports: [RouterLink, FormsModule, TestCardComponent, PackageCardComponent, GoogleReviewsComponent, NbspPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
